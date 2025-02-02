@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,32 +8,64 @@
     <link rel="stylesheet" href="/src/output.css">
     <style>
         .containerwidth {
-            width: 90%;
+            width: 80%;
             margin: auto;
         }
     </style>
 </head>
+
 <body>
 
     <header class="bg-[whitesmoke] sticky">
-        <nav class="flex justify-around containerwidth items-center">
-            <div class="text-4xl font-medium p-1.5">
-                <h1>Pukar</h1>
+        <nav class="flex justify-between containerwidth items-center">
+            <div class="text-4xl font-bold p-3">
+                <h1>Gurma</h1>
             </div>
-    
-            <div class="">
-                <a href="http://">Portfolio</a>
-                <a href="http://">Services</a>
-                <a href="http://">Projects</a>
-                <a href="http://">Experience</a>
-                <a href="http://">Education</a>
+
+            <div class="flex gap-7 text-[18px]">
+                <a href="http://" class="hover: text-gray-500 f duration-150">Portfolio</a>
+                <a href="http://" class="hover:text-gray-500 duration-150">Services</a>
+                <a href="http://" class="hover:text-gray-500 duration-150">Projects</a>
+                <a href="http://" class="hover:text-gray-500 duration-150">Experience</a>
+                <a href="http://" class="hover:text-gray-500 duration-150">Education</a>
             </div>
-    
+
             <div>
-                <button>Contact</button>
+                <button
+                    class="px-4 py-1.5 text-black border border-black rounded-md hover:bg-black hover:text-white transition">
+                    Contact
+                </button>
             </div>
         </nav>
     </header>
 
+
+    <main class="containerwidth py-4">
+
+        <div>
+            <h1 class="text-[#444444] text-3xl font-medium">Pukar Gurmachhan</h1>
+            <p class="italic text-[#B0B0B0] text-[20px]">a Full Stack Developer</p>
+            <p class="">Welcome to my portfolio — a refined space where expertise meets creativity, and innovation drives
+                seamless, scalable digital solutions. As a full-stack developer, I craft every project with excellence.
+                Let's build something great together.
+            </p>
+        </div>
+
+        <div></div>
+    </main>
+
+
 </body>
+
 </html>
+
+
+<!--    npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch    -->
+
+<!-- White (#FFFFFF): Use as the primary background color for a clean and spacious feel.
+
+Light Gray (#F5F5F5 or #EAEAEA): For subtle contrast in sections or as a secondary background.
+
+Medium Gray (#CCCCCC or #B0B0B0): For borders, dividers, or secondary text.
+
+Dark Gray (#333333 or #444444): For primary text, headings, and key elements to ensure readability -->

@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/src/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         .containerwidth {
             width: 80%;
@@ -16,44 +19,86 @@
 
 <body>
 
-    <header class="bg-[whitesmoke] sticky">
-        <nav class="flex justify-between containerwidth items-center">
-            <div class="text-4xl font-bold p-3">
-                <h1>Gurma</h1>
+    <!-- header section starts here  -->
+    <header class="bg-[whitesmoke] sticky shadow-2xl z-20">
+        <nav class="flex justify-between containerwidth items-center ">
+            <div class="p-2">
+                <h1 class="text-4xl font-bold leading-[70px]">_gurma</h1>
             </div>
 
-            <div class="flex gap-7 text-[18px]">
-                <a href="http://" class="hover: text-gray-500 f duration-150">Portfolio</a>
-                <a href="http://" class="hover:text-gray-500 duration-150">Services</a>
-                <a href="http://" class="hover:text-gray-500 duration-150">Projects</a>
-                <a href="http://" class="hover:text-gray-500 duration-150">Experience</a>
-                <a href="http://" class="hover:text-gray-500 duration-150">Education</a>
+            <div>
+                <ul class="flex gap-7 text-[18px]">
+                    <li><a href="http://" class="hover: text-gray-500 f duration-150">Portfolio</a></li>
+                    <li><a href="http://" class="hover:text-gray-500 duration-150">Projects</a></li>
+                    <li><a href="http://" class="hover:text-gray-500 duration-150">Experience</a></li>
+                    <li><a href="http://" class="hover:text-gray-500 duration-150">Education</a></li>
+                </ul>
             </div>
 
             <div>
                 <button
                     class="px-4 py-1.5 text-black border border-black rounded-md hover:bg-black hover:text-white transition">
-                    Contact
+                    Explore &nbsp; <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
         </nav>
     </header>
+    <!-- header section ends here  -->
 
 
-    <main class="containerwidth py-4">
+
+    <!-- main section starts here  -->
+    <main class="containerwidth py-[130px] flex justify-between gap-[90px]">
 
         <div>
-            <h1 class="text-[#444444] text-3xl font-medium">Pukar Gurmachhan</h1>
-            <p class="italic text-[#B0B0B0] text-[20px]">a Full Stack Developer</p>
-            <p class="">Welcome to my portfolio — a refined space where expertise meets creativity, and innovation drives
+            <h1 class="text-[#444444] text-4xl font-medium leading-[70px]">Pukar Gurmachhan</h1>
+            <p class="italic text-gray-600 text-[20px] font-light leading-[30px]">a Full Stack Developer</p>
+            <p class="leading-[25px] text-[18px]">Welcome to my portfolio — a refined space where expertise meets
+                creativity, and innovation drives
                 seamless, scalable digital solutions. As a full-stack developer, I craft every project with excellence.
                 Let's build something great together.
             </p>
+
+            <div class="py-10 flex gap-6">
+                <button
+                    class="px-4 py-1.5 text-white rounded-md bg-black hover:bg-white hover:text-black hover:border hover:border-black transition">
+                    Hire Me &nbsp; <i class="fa-regular fa-user"></i>
+                </button>
+
+                <button
+                    class="px-4 py-1.5 text-black border border-black rounded-md hover:bg-black hover:text-white transition">
+                    My Projects
+                </button>
+            </div>
+
         </div>
 
-        <div></div>
-    </main>
+        <div class="w-[900px] rounded-full overflow-hidden">
+            <img src="img/pukar.jpg" alt="profile img"
+                class="w-full h-full object-cover hover:scale-110 duration-300 hover:shadow-2xl ">
+        </div>
 
+    </main>
+    <!-- main section ends here  -->
+
+
+
+
+
+    <!-- footer section starts here  -->
+    <footer class="bg-[whitesmoke] ">
+        <ul class="flex justify-center text-[28px] gap-16 containerwidth p-4">
+            <li><a href="http://" class="hover:text-[#444444]"><i class="fa-brands fa-facebook-f"></i></a></li>
+            <li><a href="http://" class="hover:text-[#444444]"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="http://" class="hover:text-[#444444]"><i class="fa-brands fa-github"></i></a></li>
+            <li><a href="http://" class="hover:text-[#444444]"><i class="fa-brands fa-linkedin-in"></i></a></li>
+        </ul>
+        
+        <div class="flex justify-center">
+            <p>Pukar Gurmachhan Magar - Copyright © All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- footer section ends here  -->
 
 </body>
 
@@ -61,11 +106,3 @@
 
 
 <!--    npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch    -->
-
-<!-- White (#FFFFFF): Use as the primary background color for a clean and spacious feel.
-
-Light Gray (#F5F5F5 or #EAEAEA): For subtle contrast in sections or as a secondary background.
-
-Medium Gray (#CCCCCC or #B0B0B0): For borders, dividers, or secondary text.
-
-Dark Gray (#333333 or #444444): For primary text, headings, and key elements to ensure readability -->

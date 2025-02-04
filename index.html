@@ -28,13 +28,11 @@
 
             <div>
                 <ul class="hidden md:flex gap-7 text-[18px] ">
-                    <li><a href="http://"
+                    <li><a href="#portfolio"
                             class="hover: text-gray-500 f duration-150 font-medium hover:text-[19px]">Portfolio</a></li>
-                    <li><a href="http://"
+                    <li><a href="#myprojects"
                             class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Projects</a></li>
-                    <li><a href="http://"
-                            class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Experience</a></li>
-                    <li><a href="http://"
+                    <li><a href="#myeducation"
                             class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Education</a></li>
                 </ul>
             </div>
@@ -76,43 +74,37 @@
                         <li><a href="http://"
                                 class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Projects</a></li>
                         <li><a href="http://"
-                                class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Experience</a>
-                        </li>
-                        <li><a href="http://"
                                 class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Education</a>
                         </li>
-
 
                         <li>
                             <a href="/img/cv.png" download="CV.png">
                                 <button
-                                    class="hidden md:block md:px-4 py-1.5 text-black border border-black rounded-md hover:bg-black hover:text-white transition">
+                                    class="block md:hidden px-4 py-1.5 text-black border border-black rounded-md hover:bg-black hover:text-white transition">
                                     Download CV &nbsp;<i class="fa-solid fa-download"></i>
                                 </button>
                             </a>
                         </li>
 
-                    </ul>
-                </div>
 
+                    </ul>
+
+                </div>
                 <a href="/img/cv.png" download="CV.png">
                     <button
                         class="hidden md:block md:px-4 py-1.5 text-black border border-black rounded-md hover:bg-black hover:text-white transition">
                         Download CV &nbsp;<i class="fa-solid fa-download"></i>
                     </button>
                 </a>
-
-
             </div>
         </nav>
     </header>
     <!-- header section ends here  -->
 
 
-
     <!-- main section starts here  -->
-    <main class=" containerwidth py-[110px] md:flex justify-between gap-[50px] ">
-        <div class="w-full rounded-full overflow-hidden md:hidden">
+    <main class=" containerwidth py-[110px] md:flex justify-between gap-[50px] " id="portfolio" >
+        <div class="max-w-full rounded-full overflow-hidden xl:hidden">
             <img src="img/pukar.jpg" alt="profile img"
                 class="w-full h-full object-cover hover:scale-110 duration-300 hover:shadow-2xl ">
         </div>
@@ -153,7 +145,7 @@
 
         </div>
 
-        <div class="w-full rounded-full overflow-hidden hidden md:flex">
+        <div class="w-full rounded-full overflow-hidden hidden xl:flex">
             <img src="img/pukar.jpg" alt="profile img"
                 class="w-full h-full object-cover hover:scale-110 duration-300 hover:shadow-2xl ">
         </div>
@@ -163,81 +155,114 @@
 
 
 
-    <section class=" grid grid-cols-3   gap-y-16 p-4 containerwidth">
-        <div class="bg-[whitesmoke] w-[300px] relative group overflow-hidden">
-            <img src="/img/img1.png" alt="" class="w-full h-auto">
 
-            <!-- Text with background covering the image and sliding up on hover -->
-            <p
-                class="absolute bottom-0 left-0 w-full h-full bg-gray-200/70 text-2xl text-[#444444] font-medium italic flex items-center justify-center text-center p-4 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
-                Fully Responsive e-learning Website
-            </p>
+<!-- My Project section starts here  -->
+    <section>
+        <h1 class="text-[#444444] text-5xl font-medium containerwidth text-center py-[30px]" id="myprojects">
+            My Projects
+        </h1>
+        <div
+            class="overflow-hidden grid grid-cols-1 sm:grid-cols-2 containerwidth place-items-center gap-y-3 sm:gap-y-10 xl:gap-y-8">
+            <div class="w-[310px] bg-[whitesmoke] xl:w-[500px] relative group overflow-hidden mb-10 sm:mb-14 
+                transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
+                <img src="/img/img1.png" alt="" class="w-full h-auto">
+                <p
+                    class="absolute bottom-0 left-0 w-full h-full bg-gray-200/70 text-2xl text-[#444444] font-medium italic flex items-center justify-center text-center p-4 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+                    Fully Responsive e-learning Website
+                </p>
+            </div>
+
+            <div class="w-[300px] bg-[whitesmoke] xl:w-[500px] relative group overflow-hidden mb-10 sm:mb-14 
+                transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
+                <img src="/img/img2.png" alt="" class="w-full h-auto">
+                <p
+                    class="absolute bottom-0 left-0 w-full h-full bg-gray-200/70 text-2xl text-[#444444] font-medium italic flex items-center justify-center text-center p-4 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+                    My own personal Blog
+                </p>
+            </div>
+
+            <div class="w-[310px] bg-[whitesmoke] xl:w-[500px] relative group overflow-hidden mb-10 sm:mb-14 
+                transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
+                <img src="/img/img3.png" alt="" class="w-full h-auto">
+                <p
+                    class="absolute bottom-0 left-0 w-full h-full bg-gray-200/70 text-2xl text-[#444444] font-medium italic flex items-center justify-center text-center p-4 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+                    Prasansa Youths(Church) website
+                </p>
+            </div>
+
+            <div class="w-[310px] bg-[whitesmoke] xl:w-[500px] relative group overflow-hidden mb-10 sm:mb-14 
+                transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
+                <img src="/img/img4.png" alt="" class="w-full h-auto">
+                <p
+                    class="absolute bottom-0 left-0 w-full h-full bg-gray-200/70 text-2xl text-[#444444] font-medium italic flex items-center justify-center text-center p-4 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+                    Netflix Clone
+                </p>
+            </div>
+
+            <div class="w-[310px] bg-[whitesmoke] xl:w-[500px] relative group overflow-hidden mb-10 sm:mb-14 
+                transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
+                <img src="/img/img5.png" alt="" class="w-full h-auto">
+                <p
+                    class="absolute bottom-0 left-0 w-full h-full bg-gray-200/70 text-2xl text-[#444444] font-medium italic flex items-center justify-center text-center p-4 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+                    Portfolio Website
+                </p>
+            </div>
+
+            <div class="w-[310px] bg-[whitesmoke] xl:w-[500px] relative group overflow-hidden mb-10 sm:mb-14 
+                transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
+                <img src="/img/img6.png" alt="" class="w-full h-auto">
+                <p
+                    class="absolute bottom-0 left-0 w-full h-full bg-gray-200/70 text-2xl text-[#444444] font-medium italic flex items-center justify-center text-center p-4 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+                    Portfolio Website
+                </p>
+            </div>
         </div>
-
-        <div class="bg-[whitesmoke] w-[300px] relative group overflow-hidden">
-            <img src="/img/img2.png" alt="" class="w-full h-auto">
-
-            <!-- Text with background covering the image and sliding up on hover -->
-            <p
-                class="absolute bottom-0 left-0 w-full h-full bg-gray-200/70 text-2xl text-[#444444] font-medium italic flex items-center justify-center text-center p-4 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
-                My own personal Blog
-            </p>
-        </div>
-
-        <div class="bg-[whitesmoke] w-[300px] relative group overflow-hidden">
-            <img src="/img/img3.png" alt="" class="w-full h-auto">
-
-            <!-- Text with background covering the image and sliding up on hover -->
-            <p
-                class="absolute bottom-0 left-0 w-full h-full bg-gray-200/70 text-2xl text-[#444444] font-medium italic flex items-center justify-center text-center p-4 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
-                Prasansa Youths(Church) website
-            </p>
-        </div>
-
-        <div class="bg-[whitesmoke] w-[300px] relative group overflow-hidden">
-            <img src="/img/img4.png" alt="" class="w-full h-auto">
-
-            <!-- Text with background covering the image and sliding up on hover -->
-            <p
-                class="absolute bottom-0 left-0 w-full h-full bg-gray-200/70 text-2xl text-[#444444] font-medium italic flex items-center justify-center text-center p-4 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
-                Netflix Clone
-            </p>
-        </div>
-
-
-        <div class="bg-[whitesmoke] w-[300px] relative group overflow-hidden">
-            <img src="/img/img5.png" alt="" class="w-full h-auto">
-
-            <!-- Text with background covering the image and sliding up on hover -->
-            <p
-                class="absolute bottom-0 left-0 w-full h-full bg-gray-200/70 text-2xl text-[#444444] font-medium italic flex items-center justify-center text-center p-4 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
-                Portfolio Website
-            </p>
-        </div>
-
-        <div class="bg-[whitesmoke] w-[300px] relative group overflow-hidden">
-            <img src="/img/img6.png" alt="" class="w-full h-auto">
-
-            <!-- Text with background covering the image and sliding up on hover -->
-            <p
-                class="absolute bottom-0 left-0 w-full h-full bg-gray-200/70 text-2xl text-[#444444] font-medium italic flex items-center justify-center text-center p-4 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
-                Portfolio Website
-            </p>
-        </div>
-
-
-
-
-
 
     </section>
+    <!-- My Project section ends here  -->
+
+
+
+
+
+
+
+<!-- my education section starts here  -->
+    <section class="container mx-auto px-6 py-12" id="myeducation">
+        <h2 class="text-4xl font-bold text-center text-gray-800 mb-10">My Education</h2>
+
+        <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+            <!-- Education 1 -->
+            <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition duration-300">
+                <h3 class="text-2xl font-semibold text-gray-700">Bachelors in Information Management (BIM)</h3>
+                <p class="text-gray-500 mt-1">Sunsari Technical College (TU affiliated)</p>
+                <p class="text-gray-400 mt-2 italic">2022 - ongoing</p>
+            </div>
+
+            <!-- Education 2 -->
+            <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition duration-300">
+                <h3 class="text-2xl font-semibold text-gray-700">+2 in Computer Science (Management / Commerce)</h3>
+                <p class="text-gray-500 mt-1">Dharan Adarsha</p>
+                <p class="text-gray-400 mt-2 italic">2020 - 2022</p>
+            </div>
+
+            <!-- Education 3 (Optional) -->
+            <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition duration-300">
+                <h3 class="text-2xl font-semibold text-gray-700">Secondary Education</h3>
+                <p class="text-gray-500 mt-1">Letang Green Valley Academy</p>
+                <p class="text-gray-400 mt-2 italic">2008 - 2020</p>
+            </div>
+        </div>
+    </section>
+    <!-- my education section ends here  -->
+
 
 
 
     <!-- footer section starts here  -->
     <footer>
         <div class="text-[13px] flex justify-cente md:flex justify-center">
-            <p class="">Pukar Gurmachhan Magar - Copyright © All rights reserved.</p>
+            <p class="">Pukar Gurmachhan - Copyright © All rights reserved.</p>
         </div>
     </footer>
     <!-- footer section ends here  -->

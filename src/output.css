@@ -698,12 +698,6 @@
       max-width: 96rem !important;
     }
   }
-  .m-7 {
-    margin: calc(var(--spacing) * 7);
-  }
-  .my-7 {
-    margin-block: calc(var(--spacing) * 7);
-  }
   .mt-7 {
     margin-top: calc(var(--spacing) * 7);
   }
@@ -809,17 +803,11 @@
   .min-h-screen {
     min-height: 100vh;
   }
-  .w-1 {
-    width: calc(var(--spacing) * 1);
-  }
   .w-1\/2 {
     width: calc(1/2 * 100%);
   }
   .w-\[800px\] {
     width: 800px;
-  }
-  .w-\[900px\] {
-    width: 900px;
   }
   .w-full {
     width: 100%;
@@ -1234,12 +1222,6 @@
   }
   .gap-7 {
     gap: calc(var(--spacing) * 7);
-  }
-  .gap-10 {
-    gap: calc(var(--spacing) * 10);
-  }
-  .gap-14 {
-    gap: calc(var(--spacing) * 14);
   }
   .gap-16 {
     gap: calc(var(--spacing) * 16);
@@ -1660,14 +1642,8 @@
   .p-2 {
     padding: calc(var(--spacing) * 2);
   }
-  .p-3 {
-    padding: calc(var(--spacing) * 3);
-  }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
-  }
-  .py-1 {
-    padding-block: calc(var(--spacing) * 1);
   }
   .py-1\.5 {
     padding-block: calc(var(--spacing) * 1.5);
@@ -1677,9 +1653,6 @@
   }
   .py-\[110px\] {
     padding-block: 110px;
-  }
-  .py-\[130px\] {
-    padding-block: 130px;
   }
   .text-center {
     text-align: center;
@@ -1732,9 +1705,6 @@
   }
   .text-\[20px\] {
     font-size: 20px;
-  }
-  .text-\[28px\] {
-    font-size: 28px;
   }
   .text-\[30px\] {
     font-size: 30px;
@@ -2349,14 +2319,6 @@
       }
     }
   }
-  .hover\:text-2xl {
-    &:hover {
-      @media (hover: hover) {
-        font-size: var(--text-2xl);
-        line-height: var(--tw-leading, var(--text-2xl--line-height));
-      }
-    }
-  }
   .hover\:text-4xl {
     &:hover {
       @media (hover: hover) {
@@ -2365,31 +2327,10 @@
       }
     }
   }
-  .hover\:text-\[2px\] {
-    &:hover {
-      @media (hover: hover) {
-        font-size: 2px;
-      }
-    }
-  }
-  .hover\:text-\[18px\] {
-    &:hover {
-      @media (hover: hover) {
-        font-size: 18px;
-      }
-    }
-  }
   .hover\:text-\[19px\] {
     &:hover {
       @media (hover: hover) {
         font-size: 19px;
-      }
-    }
-  }
-  .hover\:text-\[20px\] {
-    &:hover {
-      @media (hover: hover) {
-        font-size: 20px;
       }
     }
   }

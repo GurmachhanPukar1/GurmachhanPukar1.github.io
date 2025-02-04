@@ -21,13 +21,13 @@
 
     <!-- header section starts here  -->
     <header class="bg-[whitesmoke]  shadow-2xl z-20 sticky top-0">
-        <nav class="flex justify-between containerwidth items-center">
+        <nav class="flex justify-between containerwidth items-center lg: gap-7">
             <div class="p-2">
                 <h1 class="text-4xl font-bold leading-[70px]">_gurma</h1>
             </div>
 
             <div>
-                <ul class="flex gap-7 text-[18px]">
+                <ul class="hidden md:flex gap-7 text-[18px] ">
                     <li><a href="http://"
                             class="hover: text-gray-500 f duration-150 font-medium hover:text-[19px]">Portfolio</a></li>
                     <li><a href="http://"
@@ -40,10 +40,47 @@
             </div>
 
             <div>
-                <button
-                    class="px-4 py-1.5 text-black border border-black rounded-md hover:bg-black hover:text-white transition">
-                    Download CV &nbsp;<i class="fa-solid fa-download"></i>
-                </button>
+
+                
+
+<!-- drawer init and toggle -->
+<div class="block text-center md:hidden">
+    <button type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example" aria-controls="drawer-example">
+        <i class="fa-solid fa-bars text-4xl"></i>
+      
+        </button>
+ </div>
+ 
+ <!-- drawer component -->
+ <div id="drawer-example" class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-80 dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-label">
+   <h5 class="italic text-gray-600 text-[20px] font-light p-3">
+    Menu
+   </h5>
+    <button type="button" data-drawer-hide="drawer-example" aria-controls="drawer-example" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white" >
+       <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+       </svg>
+       <span class="sr-only">Close menu</span>
+    </button>
+       
+    <ul class="text-xl space-y-4 ">
+        <li><a href="http://"
+                class="hover: text-gray-500 f duration-150 font-medium hover:text-[19px]">Portfolio</a></li>
+        <li><a href="http://"
+                class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Projects</a></li>
+        <li><a href="http://"
+                class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Experience</a></li>
+        <li><a href="http://"
+                class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Education</a></li>
+    </ul>
+ </div>
+ 
+
+ <button
+ class="hidden md:block md:px-4 py-1.5 text-black border border-black rounded-md hover:bg-black hover:text-white transition">
+ Download CV &nbsp;<i class="fa-solid fa-download"></i>
+</button>
+
             </div>
         </nav>
     </header>
@@ -52,10 +89,14 @@
 
 
     <!-- main section starts here  -->
-    <main class="containerwidth py-[110px] flex justify-between gap-[90px]">
+    <main class=" containerwidth py-[110px] md:flex justify-between gap-[50px] ">
+        <div class="w-full rounded-full overflow-hidden md:hidden">
+            <img src="img/pukar.jpg" alt="profile img"
+                class="w-full h-full object-cover hover:scale-110 duration-300 hover:shadow-2xl ">
+        </div>
 
         <div>
-            <h1 class="text-[#444444] text-4xl font-medium leading-[70px]">Pukar Gurmachhan</h1>
+            <h1 class="text-[#444444] text-4xl font-medium]">Pukar Gurmachhan</h1>
             <p class="italic text-gray-600 text-[20px] font-light leading-[30px]">a Full Stack Developer</p>
             <p class="leading-[25px] text-[18px]">Welcome to my portfolio — a refined space where expertise meets
                 creativity, and innovation drives
@@ -89,7 +130,7 @@
 
         </div>
 
-        <div class="w-[800px] rounded-full overflow-hidden">
+        <div class="w-full rounded-full overflow-hidden hidden md:flex">
             <img src="img/pukar.jpg" alt="profile img"
                 class="w-full h-full object-cover hover:scale-110 duration-300 hover:shadow-2xl ">
         </div>
@@ -99,52 +140,16 @@
 
 
 
-
-
-    <main class="containerwidth">
-        <h1 class="text-[#444444] text-4xl font-medium leading-[70px">My Experience</h1>
-
-        <section>
-            <div>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates aperiam pariatur voluptatem. Iusto
-                non consequatur, cupiditate quia nisi nemo natus perspiciatis quasi nostrum impedit ullam quidem a
-                ratione veritatis reiciendis? Voluptas fugit libero facilis nam corporis quaerat soluta aperiam
-                doloribus quae, optio magni. Beatae, voluptatem molestiae voluptate officiis, ducimus explicabo
-                perferendis repellat, placeat ex quidem eos repellendus vero sed aut? Atque delectus consectetur nihil
-                eius incidunt aliquid voluptas quia, tempora in quod? Doloribus nemo assumenda repudiandae eligendi
-                incidunt debitis sunt id reprehenderit explicabo ab iusto tempora ullam excepturi odio, tempore nesciunt
-                quasi accusamus hic officiis commodi? Iste facere cumque hic asperiores dolor nemo placeat. Illum labore
-                asperiores autem minus quae adipisci fugiat sequi nulla facere nemo possimus saepe repellendus, iste
-                iure nisi perferendis perspiciatis officia! Et, possimus est! Esse, quibusdam harum. Eveniet laudantium
-                sequi quibusdam aspernatur architecto est velit enim distinctio illum nemo excepturi, saepe repellat sit
-                voluptates ut porro asperiores in, eos praesentium facere dolorum, harum voluptatibus deleniti
-                reiciendis? Est corrupti doloribus tempore tempora voluptatem eos natus id inventore ipsum consequatur
-                ea, placeat cumque quis maiores nam nobis impedit, nemo autem? Doloribus ullam tempore mollitia commodi
-                aut placeat cupiditate animi vel, unde distinctio sunt eius aliquid quisquam temporibus laudantium
-                similique. Maiores natus, vitae dolore dolorum earum rerum exercitationem assumenda quos consequuntur
-                nostrum. Qui harum reprehenderit iusto distinctio amet unde voluptatum quae neque eius impedit sit
-                aspernatur sint labore nisi quibusdam sed, quaerat repellat nihil! Tenetur, ratione? Modi porro beatae
-                qui quo quidem sapiente consequatur delectus. Officiis doloremque dignissimos dolorum illo sint commodi
-                assumenda necessitatibus blanditiis nam, ad illum labore voluptates, ut natus, unde cum. Repellat
-                excepturi molestias debitis dolorem non amet eveniet animi laudantium quibusdam, deserunt eius dicta
-                suscipit aliquid error expedita praesentium, reprehenderit culpa facere. Ducimus repudiandae harum
-                adipisci quisquam similique non ipsam? Dolore minima obcaecati accusantium dolorum.
-            </div>
-        </section>
-    </main>
-
-
-
-
-
-
     <!-- footer section starts here  -->
     <footer>
-        <div class="flex justify-center">
-            <p>Pukar Gurmachhan Magar - Copyright © All rights reserved.</p>
+        <div class="text-[16px] flex justify-cente md:flex justify-center">
+            <p class="">Pukar Gurmachhan Magar - Copyright © All rights reserved.</p>
         </div>
     </footer>
     <!-- footer section ends here  -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.1/dist/flowbite.min.js"></script>
 
 </body>
 

@@ -10,6 +10,9 @@
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        html{
+            scroll-behavior: smooth;
+        }
         .containerwidth {
             width: 80%;
             margin: auto;
@@ -30,6 +33,8 @@
                 <ul class="hidden md:flex gap-7 text-[18px] ">
                     <li><a href="#portfolio"
                             class="hover: text-gray-500 f duration-150 font-medium hover:text-[19px]">Portfolio</a></li>
+                    <li><a href="#aboutme"
+                            class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">About Me</a></li>
                     <li><a href="#myprojects"
                             class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Projects</a></li>
                     <li><a href="#myeducation"
@@ -112,20 +117,24 @@
         <div>
             <h1 class="text-[#444444] text-4xl font-medium]">Pukar Gurmachhan</h1>
             <p class="italic text-gray-600 text-[20px] font-light leading-[30px]">a Full Stack Developer</p>
-            <p class="leading-[25px] text-[18px]">Welcome to my portfolio — a refined space where expertise meets
-                creativity, and innovation drives
-                seamless, scalable digital solutions. As a full-stack developer, I craft every project with excellence.
+            <p class="leading-[25px] text-[18px]">
+                Welcome to my Portfolio— the realm of my digital sanctuary, a space where exploration meets
+                creation. As a full-stack developer, I craft every project with excellence.
                 Let's build something great together.
             </p>
 
             <ul class="flex text-[30px] justify-items-start gap-16 mt-7 ">
-                <li><a href="https://www.facebook.com/pukar.magar.9404/" target="_blank" class="hover:text-[#444444] hover:text-4xl duration-300"><i
+                <li><a href="https://www.facebook.com/pukar.magar.9404/" target="_blank"
+                        class="hover:text-[#444444] hover:text-4xl duration-300"><i
                             class="fa-brands fa-facebook-f"></i></a></li>
-                <li><a href="https://www.instagram.com/_gurma/?next=%2F" target="_blank" class="hover:text-[#444444] hover:text-4xl duration-300"><i
+                <li><a href="https://www.instagram.com/_gurma/?next=%2F" target="_blank"
+                        class="hover:text-[#444444] hover:text-4xl duration-300"><i
                             class="fa-brands fa-instagram"></i></a></li>
-                <li><a href="https://github.com/GurmachhanPukar1" target="_blank" class="hover:text-[#444444] hover:text-4xl duration-300"><i
-                            class="fa-brands fa-github"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/pukar-gurmachhan-51160534b/" target="_blank" class="hover:text-[#444444] hover:text-4xl duration-300"><i
+                <li><a href="https://github.com/GurmachhanPukar1" target="_blank"
+                        class="hover:text-[#444444] hover:text-4xl duration-300"><i class="fa-brands fa-github"></i></a>
+                </li>
+                <li><a href="https://www.linkedin.com/in/pukar-gurmachhan-51160534b/" target="_blank"
+                        class="hover:text-[#444444] hover:text-4xl duration-300"><i
                             class="fa-brands fa-linkedin-in"></i></a></li>
 
             </ul>
@@ -136,7 +145,7 @@
                     class="px-4 py-1.5 text-white rounded-md bg-black hover:bg-white hover:text-black hover:border hover:border-black transition">
                     Hire Me &nbsp; <i class="fa-regular fa-user"></i>
                 </button>
-                </a>
+
 
                 <a href="">
                     <button
@@ -160,12 +169,50 @@
 
 
 
+    <!-- about me section starts here  -->
+    <section class="containerwidth py-[110px] md:flex justify-between gap-[50px] " id="aboutme">
+        <div class="max-w-full rounded-full overflow-hidden xl:w-[1000px]">
+            <img src="img/pukar.jpg" alt="profile img"
+                class="w-full h-full object-cover hover:scale-110 duration-300 hover:shadow-2xl ">
+        </div>
+
+        <div>
+            <h1 class=" text-5xl font-medium containerwidth text-center py-[30px]">
+                About <span class="text-gray-500">Me</span>
+            </h1>
+            <p class="leading-[25px] text-[18px]">I'm a full-stack developer and IT enthusiast, currently studying BIM
+                at Sunsari Technical College, Dharan (affiliated with TU). Passionate about technology, I constantly
+                explore the ever-evolving world of IT, where learning and innovation never stop.
+            </p>
+
+            <p class="leading-[25px] text-[18px] py-3">
+                From building intuitive user interfaces to developing robust backends, I enjoy crafting solutions that
+                merge creativity with functionality. My journey is one of continuous growth—learning, creating, and
+                pushing boundaries.
+            </p>
+
+            <p class="leading-[25px] text-[18px] py-4">
+                Let's connect and explore the future of technology together!
+            </p>
+
+            <button onclick="window.location.href='form.html'"
+                class="px-4 py-1.5 text-white rounded-md  bg-black hover:bg-white hover:text-black hover:border hover:border-black transition">
+                Check my blog &nbsp;<i class="fa-solid fa-blog"></i>
+            </button>
+        </div>
+
+
+
+    </section>
+    <!-- about me section ends here  -->
+
+
     <!-- My Project section starts here  -->
-    <section>
-        <h1 class="text-[#444444] text-5xl font-medium containerwidth text-center py-[30px]" id="myprojects">
-            My Projects
+    <section id="myprojects">
+        <h1 class=" text-5xl font-medium containerwidth text-center py-[30px]" >
+             <span class="text-gray-500">My </span>Projects
         </h1>
-        <div
+        <div 
             class="overflow-hidden grid grid-cols-1 sm:grid-cols-2 containerwidth place-items-center gap-y-3 sm:gap-y-10 xl:gap-y-8">
             <div class="w-[310px] bg-[whitesmoke] xl:w-[500px] relative group overflow-hidden mb-10 sm:mb-14 
                 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
@@ -185,7 +232,7 @@
                 </p>
             </div>
 
-            <div class="w-[310px] bg-[whitesmoke] xl:w-[500px] relative group overflow-hidden mb-10 sm:mb-14 
+            <div  class="w-[310px] bg-[whitesmoke] xl:w-[500px] relative group overflow-hidden mb-10 sm:mb-14 
                 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
                 <img src="/img/img3.png" alt="" class="w-full h-auto">
                 <p
@@ -208,7 +255,7 @@
                 <img src="/img/img5.png" alt="" class="w-full h-auto">
                 <p
                     class="absolute bottom-0 left-0 w-full h-full bg-gray-200/70 text-2xl text-[#444444] font-medium italic flex items-center justify-center text-center p-4 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
-                   <a href="https://sikum.com.np/">Portfolio Website</a>
+                    <a href="https://sikum.com.np/">Portfolio Website</a>
                 </p>
 
             </div>
@@ -234,7 +281,7 @@
 
     <!-- my education section starts here  -->
     <section class="container mx-auto px-6 py-12" id="myeducation">
-        <h2 class="text-4xl font-bold text-center text-gray-800 mb-10">My Education</h2>
+        <h2 class="text-4xl font-bold text-center mb-10">My <span class="text-gray-500">Education</span> </h2>
 
         <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
             <!-- Education 1 -->

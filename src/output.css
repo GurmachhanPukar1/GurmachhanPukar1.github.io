@@ -599,14 +599,14 @@
   .top-5 {
     top: calc(var(--spacing) * 5);
   }
+  .top-\[500px\] {
+    top: 500px;
+  }
   .top-\[1000px\] {
     top: 1000px;
   }
   .top-\[100px\] {
     top: 100px;
-  }
-  .top-\[500px\] {
-    top: 500px;
   }
   .top-\[550px\] {
     top: 550px;

@@ -830,9 +830,6 @@
   .h-1\.5 {
     height: calc(var(--spacing) * 1.5);
   }
-  .h-3 {
-    height: calc(var(--spacing) * 3);
-  }
   .h-8 {
     height: calc(var(--spacing) * 8);
   }
@@ -862,9 +859,6 @@
   }
   .w-1\/2 {
     width: calc(1/2 * 100%);
-  }
-  .w-3 {
-    width: calc(var(--spacing) * 3);
   }
   .w-8 {
     width: calc(var(--spacing) * 8);
@@ -1563,6 +1557,9 @@
   .bg-\[var\(--my_variable\)\] {
     background-color: var(--my_variable);
   }
+  .bg-\[white\] {
+    background-color: white;
+  }
   .bg-\[whitesmoke\] {
     background-color: whitesmoke;
   }
@@ -1792,26 +1789,11 @@
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
   }
-  .py-5 {
-    padding-block: calc(var(--spacing) * 5);
-  }
-  .py-7 {
-    padding-block: calc(var(--spacing) * 7);
-  }
   .py-10 {
     padding-block: calc(var(--spacing) * 10);
   }
   .py-12 {
     padding-block: calc(var(--spacing) * 12);
-  }
-  .py-14 {
-    padding-block: calc(var(--spacing) * 14);
-  }
-  .py-16 {
-    padding-block: calc(var(--spacing) * 16);
-  }
-  .py-142 {
-    padding-block: calc(var(--spacing) * 142);
   }
   .py-\[30px\] {
     padding-block: 30px;
@@ -1896,22 +1878,6 @@
   }
   .text-\[30px\] {
     font-size: 30px;
-  }
-  .leading-2 {
-    --tw-leading: calc(var(--spacing) * 2);
-    line-height: calc(var(--spacing) * 2);
-  }
-  .leading-2\.5 {
-    --tw-leading: calc(var(--spacing) * 2.5);
-    line-height: calc(var(--spacing) * 2.5);
-  }
-  .leading-6 {
-    --tw-leading: calc(var(--spacing) * 6);
-    line-height: calc(var(--spacing) * 6);
-  }
-  .leading-20 {
-    --tw-leading: calc(var(--spacing) * 20);
-    line-height: calc(var(--spacing) * 20);
   }
   .leading-\[25px\] {
     --tw-leading: 25px;
@@ -2728,6 +2694,16 @@
   .xl\:hidden {
     @media (width >= 80rem) {
       display: none;
+    }
+  }
+  .xl\:h-2 {
+    @media (width >= 80rem) {
+      height: calc(var(--spacing) * 2);
+    }
+  }
+  .xl\:w-2 {
+    @media (width >= 80rem) {
+      width: calc(var(--spacing) * 2);
     }
   }
   .xl\:w-\[500px\] {

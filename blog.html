@@ -24,100 +24,78 @@
 <body>
 
 
-    <!-- header section starts here  -->
-    <header class="bg-[whitesmoke] shadow-2xl z-20 sticky top-0">
-        <nav class=" containerwidth flex justify-between max-w-screen-xl items-center lg:gap-7 mx-auto containerwidth">
-            <div class="p-2">
-                <h1 class="text-3xl xl:text-4xl font-bold leading-[70px]">_myBlog</h1>
+<!-- header section starts here  -->
+<header class="bg-[whitesmoke] shadow-2xl z-20 sticky top-0">
+    <nav class=" containerwidth flex justify-between max-w-screen-xl items-center lg:gap-7 mx-auto containerwidth">
+        <div class="p-2 flex justify-between items-center" >
+            <img src="/img/prfl.jpg" class=" cursor-pointer hover:scale-105 duration-300 w-14 h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-23 lg:h-23 rounded-full object-cover" alt="profile image">
+            <h1 class="text-2xl xl:text-3xl font-bold leading-[70px] hover:text-gray-400 duration-300 hover:cursor-pointer">&nbsp;_gurmaBlog</h1>
+        </div>
+
+        <div>
+            <ul class="hidden md:flex gap-7 text-[18px]">
+                <li><a href="#portfolio" class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Portfolio</a></li>
+                <li><a href="#aboutme" class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">About Me</a></li>
+                <li><a href="#myprojects" class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Projects</a></li>
+                <li><a href="#myeducation" class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Education</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <!-- Drawer init and toggle -->
+            <div class="block text-center md:hidden">
+                <button type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example"
+                    aria-controls="drawer-example">
+                    <i class="fa-solid fa-bars text-2xl xl:text-4xl"></i>
+                </button>
             </div>
 
-            <div>
-                <ul class="hidden md:flex gap-7 text-[18px]">
-                    <li><a href="#portfolio"
-                            class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Portfolio</a></li>
-                    <li><a href="#aboutme" class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">About
-                            Me</a></li>
-                    <li><a href="#myprojects"
-                            class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Projects</a></li>
-                    <li><a href="#myeducation"
-                            class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Education</a></li>
+            <!-- Drawer component -->
+            <div id="drawer-example"
+                class="bg-white fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full w-80"
+                tabindex="-1" aria-labelledby="drawer-label">
+                <h5 class="italic text-gray-600 text-[20px] font-light p-3">
+                    Menu
+                </h5>
+                <button type="button" data-drawer-hide="drawer-example" aria-controls="drawer-example"
+                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white">
+                    <svg class="w-1.5 h-1.5 xl:w-2 xl:h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                    </svg>
+                    <span class="sr-only">Close menu</span>
+                </button>
+
+                <ul class="text-xl space-y-4 bg-white p-4 rounded-lg">
+                    <li><a href="#portfolio" class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Portfolio</a>
+                    </li>
+                    <li><a href="#aboutme" class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">About Me</a>
+                    </li>
+                    <li><a href="#myprojects" class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Projects</a></li>
+                    <li><a href="#myeducation" class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Education</a>
+                    </li>
+
+                    <li>
+                        <a href="/img/cv.png" download="CV.png">
+                            <button class="block md:hidden px-4 py-1.5 text-black border border-black rounded-md hover:bg-black hover:text-white transition">
+                                Download CV &nbsp;<i class="fa-solid fa-download"></i>
+                            </button>
+                        </a>
+                    </li>
                 </ul>
             </div>
+        </div>
+    </nav>
+</header>
+<!-- header section ends here -->
 
-            <div>
-                <!-- Drawer init and toggle -->
-                <div class="block text-center md:hidden">
-                    <button type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example"
-                        aria-controls="drawer-example">
-                        <i class="fa-solid fa-bars text-4xl"></i>
-                    </button>
-                </div>
-
-                <!-- Drawer component -->
-                <div id="drawer-example"
-                    class="bg-white fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full w-80"
-                    tabindex="-1" aria-labelledby="drawer-label">
-                    <h5 class="italic text-gray-600 text-[20px] font-light p-3">
-                        Menu
-                    </h5>
-                    <button type="button" data-drawer-hide="drawer-example" aria-controls="drawer-example"
-                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white">
-                        <svg class="w-1.5 h-1.5 xl:w-2 xl:h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                            fill="none" viewBox="0 0 14 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                        </svg>
-                        <span class="sr-only">Close menu</span>
-                    </button>
-
-                    <ul class="text-xl space-y-4 bg-white p-4 rounded-lg">
-                        <li><a href="#portfolio"
-                                class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Portfolio</a>
-                        </li>
-                        <li><a href="#aboutme"
-                                class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">About Me</a>
-                        </li>
-                        <li><a href="#myprojects"
-                                class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Projects</a></li>
-                        <li><a href="#myeducation"
-                                class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Education</a>
-                        </li>
-
-                        <li>
-                            <a href="/img/cv.png" download="CV.png">
-                                <button
-                                    class="block md:hidden px-4 py-1.5 text-black border border-black rounded-md hover:bg-black hover:text-white transition">
-                                    Download CV &nbsp;<i class="fa-solid fa-download"></i>
-                                </button>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <!-- header section ends here -->
-
-
-
-<!-- Main section starts here -->
-<main class="py-7 container xl:py-[30px] shadow-2xl containerwidth" id="portfolio">
-    <div class="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] bg-cover bg-center bg-[url('/img/blog.jpg')]">
-        <!-- Text Positioned at Bottom Center -->
-        <h1 class="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 text-white text-center text-lg sm:text-xl md:text-2xl lg:text-4xl font-extrabold">
-            Pukar - To be called upon
-        </h1>
-        
-    </div>
+<main class="containerwidth  py-3">
+    <div class="bg-[url('/img/blog.jpg')] bg-cover bg-center h-screen w-full opacity-80 rounded-full">
+        <!-- Your content here -->
+      </div>
+      
 </main>
-<!-- Main section ends here -->
-
-
-<section class="py-10 containerwidth"> 
-    <h1>Know me more</h1>
-    <p class="text-[#444444]  font-medium] font-light">सोचेको केही हुँदैन, त्यसैले सोच्नै छोडेको छु। कुनै दिन बसेर मज्जाले सोचौँला। अहिलेलाई यस्तै नै भइरहोस्।</p>
-
-</section>
 
 
 
@@ -126,14 +104,21 @@
 
 
 
+<!-- blog section starts here  -->
+ <!-- <section>
+    <h1>my_Blog</h1>
+
+    <div>
+        <div>
+            <img src="/img/blogimg.jpg" alt="">
+        </div>
+
+        <div></div>
+    </div>
+ </section> -->
+ <!-- blog section ends here -->
 
 
-
-
-
-
-
-    
 
 
 

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/output.css">
+    <style>
+        .containerwidth {
+            width: 90%;
+            margin: auto;
+        }
+
+        input:disabled, select:disabled, button:disabled {
+            background-color: #f0f0f0;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+            <div class="grid grid-cols-1 sm:grid-cols-2 containerwidth py-7 gap-9 ">
+
+            <div class=" bg-[whitesmoke] shadow-2xl px-9 py-7 rounded-lg">
+                <h1 class="text-center text-4xl font-medium text-red-400 py-5">Bill Payment</h1>
+                <div class="border"></div>
+                <div class="space-y-5 py-10">
+                    <div class="flex gap-10">
+                        <label for="name" class="font-medium">Name:</label>
+                        <input type="text" name="name" id="name" class="border rounded-lg w-[70%] h-8 px-3">
+                    </div>
+
+                    <div class="flex gap-6">
+                        <label for="address" class="font-medium">Address:</label>
+                        <input type="text" name="address" id="address" class="border rounded-lg w-[70%] h-8 px-3">
+                    </div>
+
+                    <div class="flex gap-3">
+                        <label for="phone" class="font-medium">Phone no:</label>
+                        <input type="tel" name="phone" id="phone" class="border rounded-lg w-[70%] h-8 px-3">
+                    </div>
+
+                    <div class="flex gap-8 items-center">
+                        <label for="course" class="font-medium">Course:</label>
+                        <select name="course" id="course" class="border rounded-lg w-[70%] h-10 px-3 bg-gray-200 focus:outline-none focus:ring-2">
+                            <option value="Full Stack with Laravel">Full Stack with laravel</option>
+                            <option value="Web Development">Web Development Course</option>
+                            <option value="Python Django">Python Django</option>
+                            <option value="UI/UX Certification">UI/UX Certification</option>
+                        </select>
+                    </div>
+
+                    <div class="flex gap-5">
+                        <label for="pay" class="font-medium">Payment:</label>
+                        <input type="tel" name="pay" id="pay" class="border rounded-lg w-[50%] h-8 px-3" placeholder="Total Fees is Rs.8500/-">
+                    </div>
+
+                    <button type="buttom" onclick="billinfo()" class="bg-gray-700 py-1 px-3 rounded-lg text-white hover:text-black hover:bg-white hover:border duration-150">Submit</button>
+                </div>
+
+            </div>
+
+            <div class="bg-[whitesmoke] shadow-2xl rounded py-7 hidden " id="receipt">
+                <h1 class="text-center text-4xl font-medium text-red-400 py-5">Receipt</h1>
+                <div class="border"></div>
+                <div class="space-y-3 px-6 py-9">
+                    <div class="flex gap-14">
+                        <label for="name" class="font-medium">Name:</label>
+                        <p class="border-b border-dotted" id="namePlace"></p>
+                    </div>
+
+
+                    <div class="flex gap-11">
+                        <label for="address" class="font-medium">Address:</label>
+                        <p class="border-b border-dotted" id="addressPlace"></p>
+                    </div>
+
+                    <div class="flex gap-8">
+                        <label for="phone" class="font-medium">Phone no:</label>
+                        <p class="border-b border-dotted" id="phonePlace"></p>
+                    </div>
+
+                    <div class="flex gap-13">
+                        <label for="phone" class="font-medium">Course:</label>
+                        <p class="border-b border-dotted" id="coursePlace"></p>
+                    </div>
+
+                    <div class="flex gap-8">
+                        <label for="phone" class="font-medium">Total Fees:</label>
+                        <p class="border-b border-dotted">Rs. 8500/-</p>
+                    </div>
+
+                    <div class="flex gap-9">
+                        <label for="phone" class="font-medium">Fees Paid:</label>
+                        <p class="border-b border-dotted" id="feesPaid"></p>
+                    </div>
+
+                    <div class="flex gap-18">
+                        <label for="phone" class="font-medium" >Due:</label>
+                        <p class="border-b border-dotted" id="payDue"></p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+    </section>
+
+    <script src="/js/index.js"></script>
+</body>
+
+</html>
+
+<!-- npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch -->

@@ -1575,8 +1575,8 @@
   .bg-black {
     background-color: var(--color-black);
   }
-  .bg-black\/60 {
-    background-color: color-mix(in oklab, var(--color-black) 60%, transparent);
+  .bg-black\/80 {
+    background-color: color-mix(in oklab, var(--color-black) 80%, transparent);
   }
   .bg-red-500 {
     background-color: var(--color-red-500);

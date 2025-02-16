@@ -1335,9 +1335,6 @@
   .gap-10 {
     gap: calc(var(--spacing) * 10);
   }
-  .gap-11 {
-    gap: calc(var(--spacing) * 11);
-  }
   .gap-13 {
     gap: calc(var(--spacing) * 13);
   }

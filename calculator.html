@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <section class="bg-black h-screen flex text-white">
+        <div class="border-2 border-amber-50  w-[90%] sm:w-[70%] md:[50%] lg:w-[35%] xl:w-[25%] rounded-3xl m-auto overflow-hidden">
+            <input type="text" class="text-right w-full p-3 h-24 border border-white rounded-xl text-4xl id" id="display" readonly>
+            <div class="grid grid-cols-4 text-3xl pl-3 space-y-2 py-5 gap-2">
+                <button onclick="clearall()" class="bg-[#a6a4a7] h-16 w-16 rounded-full hover:bg-[#827f83] duration-150">C</button>
+                <button onclick="display('+/-')" class="bg-[#a6a4a7] h-16 w-16 rounded-full hover:bg-[#827f83] duration-150">+/-</button>
+                <button onclick="display('%')" class="bg-[#a6a4a7] h-16 w-16 rounded-full hover:bg-[#827f83] duration-150">%</button>
+                <button onclick="display('/')" class="bg-[#f0a23d] h-16 w-16 rounded-full">/</button>
+
+                <button onclick="display(7)" class=" bg-[#a6a4a7] h-16 w-16 rounded-full hover:bg-[#827f83] duration-150">7</button>
+                <button onclick="display(8)" class="bg-[#a6a4a7] h-16 w-16 rounded-full hover:bg-[#827f83] duration-150">8</button>
+                <button onclick="display(9)" class="bg-[#a6a4a7] h-16 w-16 rounded-full hover:bg-[#827f83] duration-150">9</button>
+                <button onclick="display('*')" class="bg-[#f0a23d] h-16 w-16 rounded-full">X</button>
+
+                <button onclick="display(4)" class="bg-[#a6a4a7] h-16 w-16 rounded-full hover:bg-[#827f83] duration-150">4</button>
+                <button onclick="display(5)" class="bg-[#a6a4a7] h-16 w-16 rounded-full hover:bg-[#827f83] duration-150">5</button>
+                <button onclick="display(6)" class="bg-[#a6a4a7] h-16 w-16 rounded-full hover:bg-[#827f83] duration-150">6</button>
+                <button onclick="display('-')" class="bg-[#f0a23d] h-16 w-16 rounded-full">-</button>
+
+                <button onclick="display(1)" class="bg-[#a6a4a7] h-16 w-16 rounded-full hover:bg-[#827f83] duration-150">1</button>
+                <button onclick="display(2)" class="bg-[#a6a4a7] h-16 w-16 rounded-full hover:bg-[#827f83] duration-150">2</button>
+                <button onclick="display(3)" class="bg-[#a6a4a7] h-16 w-16 rounded-full hover:bg-[#827f83] duration-150">3</button>
+                <button onclick="display('+')" class="bg-[#f0a23d] h-16 w-16 rounded-full">+</button>
+
+                <button onclick="display(0)" class="bg-[#a6a4a7] h-16 rounded-full  hover:bg-[#827f83] duration-150">0</button>
+                <button onclick="edit()" class="bg-[#a6a4a7] h-16 rounded-full  hover:bg-[#827f83] duration-150"><i class="fa-solid fa-pen-to-square"></i></button>
+                <button onclick="display('.')" class="bg-[#a6a4a7] h-16 w-16 rounded-full hover:bg-[#827f83] duration-150">.</button>
+                <button onclick="calculate()" class="bg-[#f0a23d] h-16 w-16 rounded-full">=</button>
+                
+
+            </div>
+        </div>
+    </section>
+
+
+</body><script src="/js/index.js"></script>
+</html>
+
+<!-- npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch -->

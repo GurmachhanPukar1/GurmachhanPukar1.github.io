@@ -1,3 +1,5 @@
+
+// Receipt/Bill Payment ko JS starts here 
 function billinfo() {
     const name = document.getElementById("name").value;
     const address = document.getElementById("address").value;
@@ -41,3 +43,28 @@ function billinfo() {
 
     document.getElementById("receipt").style.display="block"
 }
+// Receipt/Bill Payment ko JS ends here 
+
+
+
+
+// Calculator ko  JS starts here
+let input =document.getElementById("display")
+
+function display(data){
+    input.value += data
+}
+
+function clearall(){
+    input.value = ""
+}
+
+function calculate(){
+input.value=eval(input.value)
+} 
+
+
+function edit(){
+    input.value = input.value.slice(0,-1);
+ }
+// Calculator ko  JS ends here 

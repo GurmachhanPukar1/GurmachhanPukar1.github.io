@@ -1,435 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pukar Gurmachhan</title>
-    <link rel="stylesheet" href="/src/output.css">
+    <title>Pukar Gurmachhan - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        .containerwidth {
-            width: 88%;
-            margin: auto;
-        }
-    </style>
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+<body class="font-inter bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- Dark Mode Toggle -->
+    <button id="theme-toggle" class="fixed top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 z-50" aria-label="Toggle dark mode">
+        <i class="fa-solid fa-moon"></i>
+    </button>
 
-<body>
-
-    <!-- header section starts here  -->
-    <header class="bg-[whitesmoke] shadow-2xl z-20 sticky top-0">
-        <nav class=" containerwidth flex justify-between max-w-screen-xl items-center lg:gap-7 mx-auto containerwidth">
-            <div class="p-2 flex justify-between items-center">
-                <img src="/img/prfl.jpg"
-                    class=" cursor-pointer hover:scale-105 duration-300 w-14 h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-23 lg:h-23 rounded-full object-cover"
-                    alt="profile image">
-                <h1
-                    class="text-2xl xl:text-3xl font-bold leading-[70px] hover:text-gray-400 duration-300 hover:cursor-pointer">
-                    &nbsp;_gurma</h1>
+    <!-- Header Section -->
+    <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-40">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="/img/prfl.jpg" alt="Profile Image" class="w-12 h-12 rounded-full object-cover transform hover:scale-105 transition-transform duration-300">
+                <a href="#" class="text-2xl font-bold text-gray-800 dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-300 transition">_gurma</a>
             </div>
-
-            <div>
-                <ul class="hidden md:flex gap-7 text-[18px]">
-                    <li><a href="#portfolio"
-                            class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Portfolio</a></li>
-                    <li><a href="#aboutme" class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">About
-                            Me</a></li>
-                    <li><a href="#myprojects"
-                            class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Projects</a></li>
-                    <li><a href="#myeducation"
-                            class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Education</a></li>
-                </ul>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#portfolio" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium hover:scale-105 transition">Portfolio</a>
+                <a href="#aboutme" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium hover:scale-105 transition">About</a>
+                <a href="#myprojects" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium hover:scale-105 transition">Projects</a>
+                <a href="#myeducation" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium hover:scale-105 transition">Education</a>
+                <a href="/blog.html" class="px-4 py-2 bg-gradient-to-r from-gray-700 to-gray-900 text-white rounded-md hover:from-gray-600 hover:to-gray-800 transition flex items-center"><i class="fa-solid fa-blog mr-2"></i>Blog</a>
             </div>
-
-            <div>
-                <!-- Drawer init and toggle -->
-                <div class="block text-center md:hidden">
-                    <button type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example"
-                        aria-controls="drawer-example">
-                        <i class="fa-solid fa-bars text-2xl xl:text-4xl"></i>
-                    </button>
-                </div>
-
-                <!-- Drawer component -->
-                <div id="drawer-example"
-                    class="bg-white fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full w-80"
-                    tabindex="-1" aria-labelledby="drawer-label">
-                    <h5 class="italic text-gray-600 text-[20px] font-light p-3">
-                        Menu
-                    </h5>
-                    <button type="button" data-drawer-hide="drawer-example" aria-controls="drawer-example"
-                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white">
-                        <svg class="w-1.5 h-1.5 xl:w-2 xl:h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                            fill="none" viewBox="0 0 14 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                        </svg>
-                        <span class="sr-only">Close menu</span>
-                    </button>
-
-                    <ul class="text-xl space-y-4 bg-white p-4 rounded-lg">
-                        <li><a href="#portfolio"
-                                class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Portfolio</a>
-                        </li>
-                        <li><a href="#aboutme"
-                                class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">About Me</a>
-                        </li>
-                        <li><a href="#myprojects"
-                                class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Projects</a></li>
-                        <li><a href="#myeducation"
-                                class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Education</a>
-                        </li>
-
-                        <li>
-                            <a href="/blog.html">
-                                <button
-                                    class="px-4 py-1.5 text-white rounded-md  bg-black hover:bg-white hover:text-black hover:border hover:border-black transition">
-                                    gurmaBlog &nbsp;<i class="fa-solid fa-blog"></i>
-                                </button>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <!-- header section ends here -->
-
-
-
-
-    <!-- main section starts here  -->
-    <main class="py-6 containerwidth xl:py-[30px] md:flex justify-between gap-[50px] " id="portfolio">
-        <div class="max-w-full rounded-full overflow-hidden xl:hidden">
-            <img src="/img/pic1.jpg" alt="profile img"
-                class="w-full h-full object-cover hover:scale-110 duration-300 hover:shadow-2xl  ">
-        </div>
-
-
-        <div>
-            <h1 class="text-[#444444] text-4xl font-medium] py-4 ">Pukar Gurmachhan</h1>
-            <p class="italic text-gray-600 text-[20px] font-light leading-[30px]">a Full Stack Developer</p>
-            <p class="leading-[25px] text-[18px]">
-                Welcome to my Portfolio— the realm of my digital sanctuary, a space where exploration meets
-                creation. As a full-stack developer, I craft every project with excellence.
-                Let's build something great together.
-            </p>
-
-            <ul class="flex text-[30px] justify-items-start gap-16 mt-7 ">
-                <li><a href="https://www.facebook.com/pukar.magar.9404/" target="_blank"
-                        class="hover:text-[#444444] hover:text-4xl duration-300"><i
-                            class="fa-brands fa-facebook-f"></i></a></li>
-                <li><a href="https://www.instagram.com/_gurma/?next=%2F" target="_blank"
-                        class="hover:text-[#444444] hover:text-4xl duration-300"><i
-                            class="fa-brands fa-instagram"></i></a></li>
-                <li><a href="https://github.com/GurmachhanPukar1" target="_blank"
-                        class="hover:text-[#444444] hover:text-4xl duration-300"><i class="fa-brands fa-github"></i></a>
-                </li>
-                <li><a href="https://www.linkedin.com/in/pukar-gurmachhan-51160534b/" target="_blank"
-                        class="hover:text-[#444444] hover:text-4xl duration-300"><i
-                            class="fa-brands fa-linkedin-in"></i></a></li>
-
-            </ul>
-
-
-            <div class="py-10 flex gap-7">
-                <a href="#hireme">
-                    <button
-                        class="px-4 py-1.5 text-white rounded-md bg-black hover:bg-white hover:text-black hover:border hover:border-black transition">
-                        Hire Me &nbsp; <i class="fa-regular fa-user"></i>
-                    </button>
-                </a>
-
-
-                <a href="/img/CV.png" download="My_CV">
-                    <button
-                        class="px-4 py-1.5 text-black border border-black rounded-md hover:bg-black hover:text-white transition">
-                        Download CV <i class="fa-solid fa-download"></i>
-                    </button>
-                </a>
-
-
-            </div>
-
-        </div>
-
-        <div class="w-full rounded-full overflow-hidden hidden xl:flex">
-            <img src="/img/pic1.jpg" alt="profile img"
-                class="w-full h-full object-cover hover:scale-110 duration-300 hover:shadow-2xl ">
-        </div>
-
-    </main>
-    <!-- main section ends here  -->
-
-
-
-
-
-    <!-- about me section starts here  -->
-    <section class="containerwidth py-[110px] md:flex justify-between gap-[50px] " id="aboutme">
-        <div class="max-w-full rounded-full overflow-hidden xl:w-[1000px]">
-            <img src="/img/aboutimg.jpg" alt="profile img"
-                class="w-full h-full object-cover hover:scale-110 duration-300 hover:shadow-2xl ">
-        </div>
-
-        <div>
-            <h1 class=" text-5xl font-medium containerwidth text-center py-[30px]">
-                About <span class="text-gray-500">Me</span>
-            </h1>
-            <p class="leading-[25px] text-[18px]">I'm a full-stack developer and IT enthusiast, currently studying BIM
-                at Sunsari Technical College, Dharan (affiliated with TU). Passionate about technology, I constantly
-                explore the ever-evolving world of IT, where learning and innovation never stop.
-            </p>
-
-            <p class="leading-[25px] text-[18px] py-3">
-                From building intuitive user interfaces to developing robust backends, I enjoy crafting solutions that
-                merge creativity with functionality. My journey is one of continuous growth—learning, creating, and
-                pushing boundaries.
-            </p>
-
-            <p class="leading-[25px] text-[18px] py-4">
-                Let's connect and explore the future of technology together!
-            </p>
-
-            <button onclick="window.location.href='blog.html'"
-                class="px-4 py-1.5 text-white rounded-md  bg-black hover:bg-white hover:text-black hover:border hover:border-black transition">
-                Check my blog &nbsp;<i class="fa-solid fa-blog"></i>
+            <button class="md:hidden text-gray-600 dark:text-gray-300 focus:outline-none" data-drawer-target="mobile-menu" data-drawer-show="mobile-menu" aria-controls="mobile-menu">
+                <i class="fa-solid fa-bars text-2xl"></i>
             </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed inset-y-0 left-0 z-50 w-64 bg-white dark:bg-gray-800 shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out" aria-labelledby="mobile-menu-label">
+            <div class="flex justify-between items-center p-4 border-b dark:border-gray-700">
+                <h5 class="text-xl font-medium text-gray-600 dark:text-gray-300">Menu</h5>
+                <button data-drawer-hide="mobile-menu" aria-controls="mobile-menu" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <ul class="flex flex-col space-y-4 p-4">
+                <li><a href="#portfolio" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium">Portfolio</a></li>
+                <li><a href="#aboutme" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium">About</a></li>
+                <li><a href="#myprojects" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium">Projects</a></li>
+                <li><a href="#myeducation" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium">Education</a></li>
+                <li><a href="/blog.html" class="px-4 py-2 bg-gradient-to-r from-gray-700 to-gray-900 text-white rounded-md hover:from-gray-600 hover:to-gray-800 transition flex items-center"><i class="fa-solid fa-blog mr-2"></i>Blog</a></li>
+            </ul>
         </div>
+    </header>
 
+    <!-- Hero Section -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900" id="portfolio">
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+            <div class="flex-1">
+                <h1 class="text-4xl sm:text-5xl font-bold text-gray-800 dark:text-white mb-4">Pukar Gurmachhan</h1>
+                <p class="text-xl italic text-gray-600 dark:text-gray-300 mb-6">Full Stack Developer</p>
+                <p class="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-8">
+                    Welcome to my digital portfolio—a space where innovation meets craftsmanship. As a full-stack developer, I create seamless, impactful solutions with a passion for pushing boundaries. Let's build the future together.
+                </p>
+                <div class="flex space-x-6 mb-8">
+                    <a href="https://www.facebook.com/pukar.magar.9404/" target="_blank" class="text-2xl text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:scale-110 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/_gurma/?next=%2F" target="_blank" class="text-2xl text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:scale-110 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://github.com/GurmachhanPukar1" target="_blank" class="text-2xl text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:scale-110 transition"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/pukar-gurmachhan-51160534b/" target="_blank" class="text-2xl text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:scale-110 transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#hireme" class="px-6 py-3 bg-gradient-to-r from-gray-700 to-gray-900 text-white rounded-md hover:from-gray-600 hover:to-gray-800 transition flex items-center transform hover:scale-105"><i class="fa-regular fa-user mr-2"></i>Hire Me</a>
+                    <a href="/img/CV.png" download="My_CV" class="px-6 py-3 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100 border border-gray-800 dark:border-gray-300 rounded-md hover:bg-gray-800 dark:hover:bg-gray-600 hover:text-white dark:hover:text-white transition flex items-center transform hover:scale-105"><i class="fa-solid fa-download mr-2"></i>Download CV</a>
+                </div>
+            </div>
+            <div class="flex-1 hidden lg:block">
+                <img src="/img/pic1.jpg" alt="Profile Image" class="w-full rounded-lg object-cover shadow-xl transform hover:scale-105 transition-transform duration-300">
+            </div>
+        </div>
+    </main>
 
-
+    <!-- About Me Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="aboutme">
+        <h2 class="text-4xl font-bold text-center text-gray-800 dark:text-white mb-12">About <span class="text-gray-500 dark:text-gray-400">Me</span></h2>
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+            <div class="flex-1">
+                <img src="/img/aboutimg.jpg" alt="About Image" class="w-full rounded-lg object-cover shadow-xl transform hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="flex-1">
+                <p class="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-4">
+                    I'm a dedicated full-stack developer and IT enthusiast, currently pursuing a Bachelor's in Information Management (BIM) at Sunsari Technical College, affiliated with TU.
+                </p>
+                <p class="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-4">
+                    I specialize in crafting intuitive user interfaces and robust backends, blending creativity with technical precision. My passion for technology drives me to explore new tools and innovate continuously.
+                </p>
+                <p class="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-6">
+                    Ready to collaborate? Let's create something extraordinary!
+                </p>
+                <a href="/blog.html" class="px-6 py-3 bg-gradient-to-r from-gray-700 to-gray-900 text-white rounded-md hover:from-gray-600 hover:to-gray-800 transition flex items-center w-fit transform hover:scale-105"><i class="fa-solid fa-blog mr-2"></i>Check My Blog</a>
+            </div>
+        </div>
     </section>
-    <!-- about me section ends here  -->
 
-
-    <!-- My Project section starts here -->
-<section id="myprojects">
-    <h1 class="text-5xl font-medium containerwidth text-center py-[30px]">
-        <span class="text-gray-500">My </span>Projects
-    </h1>
-    <div class="grid grid-cols-1 sm:grid-cols-2 containerwidth place-items-center gap-6 sm:gap-8 xl:gap-10">
-
-        <!-- Project Card -->
-        <div class="relative w-[310px] xl:w-[500px] bg-white shadow-lg overflow-hidden rounded-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl group">
-            <img src="/img/BillPayment.jpg" alt="Bill Payment System" class="w-full h-auto">
-            <div class="absolute inset-0 bg-black/80 flex flex-col items-center justify-center text-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p class="text-2xl font-medium italic mb-3">Bill Payment System</p>
-                <a href="/billpayment.html" class="px-4 py-2 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition">View Project</a>
+    <!-- Projects Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="myprojects">
+        <h2 class="text-4xl font-bold text-center text-gray-800 dark:text-white mb-12"><span class="text-gray-500 dark:text-gray-400">My </span>Projects</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project Card -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src="/img/BillPayment.jpg" alt="Bill Payment System" class="w-full h-48 object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-2">Bill Payment System</h3>
+                    <a href="/billpayment.html" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition transform hover:scale-105">View Project</a>
+                </div>
             </div>
-
-        </div>
-        <!-- Project Card -->
-        <div class="relative w-[310px] xl:w-[500px] bg-white shadow-lg overflow-hidden rounded-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl group">
-            <img src="/img/calculator.png" alt="E-learning website" class="w-full h-auto">
-            <div class="absolute inset-0 bg-black/80 flex flex-col items-center justify-center text-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p class="text-2xl font-medium italic mb-3">Calculator using JavaScript</p>
-                <a href="calculator.html" class="px-4 py-2 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition">View Project</a>
+            <!-- Project Card -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src="/img/calculator.png" alt="Calculator" class="w-full h-48 object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-2">Calculator using JavaScript</h3>
+                    <a href="/calculator.html" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition transform hover:scale-105">View Project</a>
+                </div>
             </div>
-        </div>
-
-        <!-- Repeat for other projects -->
-        <div class="relative w-[310px] xl:w-[500px] bg-white shadow-lg overflow-hidden rounded-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl group">
-            <img src="/img/img2.png" alt="Personal Blog" class="w-full h-auto">
-            <div class="absolute inset-0 bg-black/80 flex flex-col items-center justify-center text-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p class="text-2xl font-medium italic mb-3"> Travel Blog</p>
-                <a href="#" class="px-4 py-2 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition">View Project</a>
+            <!-- Project Card -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src="/img/img2.png" alt="Travel Blog" class="w-full h-48 object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-2">Travel Blog</h3>
+                    <a href="#" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition transform hover:scale-105">View Project</a>
+                </div>
             </div>
-        </div>
-
-        <div class="relative w-[310px] xl:w-[500px] bg-white shadow-lg overflow-hidden rounded-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl group">
-            <img src="/img/img3.png" alt="Church Website" class="w-full h-auto">
-            <div class="absolute inset-0 bg-black/80 flex flex-col items-center justify-center text-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p class="text-2xl font-medium italic mb-3">Church Website</p>
-                <a href="#" class="px-4 py-2 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition">View Project</a>
+            <!-- Project Card -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src="/img/img3.png" alt="Church Website" class="w-full h-48 object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-2">Church Website</h3>
+                    <a href="#" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition transform hover:scale-105">View Project</a>
+                </div>
             </div>
-        </div>
-
-        <div class="relative w-[310px] xl:w-[500px] bg-white shadow-lg overflow-hidden rounded-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl group">
-            <img src="/img/img4.png" alt="Netflix Clone" class="w-full h-auto">
-            <div class="absolute inset-0 bg-black/80 flex flex-col items-center justify-center text-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p class="text-2xl font-medium italic mb-3">Netflix Clone</p>
-                <a href="https://www.netflix.com/np/" class="px-4 py-2 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition">View Project</a>
+            <!-- Project Card -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src="/img/img4.png" alt="Netflix Clone" class="w-full h-48 object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-2">Netflix Clone</h3>
+                    <a href="https://www.netflix.com/np/" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition transform hover:scale-105">View Project</a>
+                </div>
             </div>
-        </div>
-
-        <div class="relative w-[310px] xl:w-[500px] bg-white shadow-lg overflow-hidden rounded-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl group">
-            <img src="/img/img5.png" alt="Portfolio Website" class="w-full h-auto">
-            <div class="absolute inset-0 bg-black/80 flex flex-col items-center justify-center text-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p class="text-2xl font-medium italic mb-3">Portfolio Website</p>
-                <a href="https://sikum.com.np/" class="px-4 py-2 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition">View Project</a>
+            <!-- Project Card -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src="/img/img5.png" alt="Portfolio Website" class="w-full h-48 object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-2">Portfolio Website</h3>
+                    <a href="https://sikum.com.np/" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition transform hover:scale-105">View Project</a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- My Project section ends here -->
+    </section>
 
-
-
-
-
-<!-- my education section starts here  -->
-<section class="container mx-auto px-6 py-16" id="myeducation">
-    <h2 class="text-4xl font-extrabold text-center mb-16 text-gray-800">
-        My <span class="text-gray-500">Education</span>
-    </h2>
-
-    <div class="flex flex-col lg:flex-row gap-8 justify-center items-center">
-        <!-- Education 1 -->
-        <div class="bg-white rounded-lg shadow-lg p-8 max-w-xs w-full transform transition-all duration-500 hover:scale-105 hover:shadow-2xl">
-            <div class="text-center">
-                <h3 class="text-2xl font-semibold text-gray-700 mb-3">Secondary Education</h3>
-                <p class="text-lg text-gray-600">Letang Green Valley Academy</p>
-                <p class="text-sm text-gray-400 mt-2 italic">2008 - 2020</p>
+    <!-- Education Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="myeducation">
+        <h2 class="text-4xl font-bold text-center text-gray-800 dark:text-white mb-12">My <span class="text-gray-500 dark:text-gray-400">Education</span></h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Education Card -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-2">Secondary Education</h3>
+                <p class="text-gray-600 dark:text-gray-300">Letang Green Valley Academy</p>
+                <p class="text-sm text-gray-400 dark:text-gray-500 italic mt-1">2008 - 2020</p>
+                <a href="https://letanggreenvalley.edu.np/" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition transform hover:scale-105">Learn More</a>
             </div>
-            <div class="mt-6 border-t pt-4 text-center">
-                <a href="https://letanggreenvalley.edu.np/" target="_blank" class="bg-blue-500 text-white py-2 px-4 rounded-lg text-sm hover:bg-blue-600 transition duration-300">
-                    Learn More
-                </a>
+            <!-- Education Card -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-2">+2 in Computer Management / Commerce</h3>
+                <p class="text-gray-600 dark:text-gray-300">Dharan Adarsha</p>
+                <p class="text-sm text-gray-400 dark:text-gray-500 italic mt-1">2020 - 2022</p>
+                <a href="https://www.facebook.com/p/Dharan-Adarsha-Boarding-Secondary-schooldharan-100063633472581/" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition transform hover:scale-105">Learn More</a>
             </div>
-        </div>
-
-        <!-- Education 2 -->
-        <div class="bg-white rounded-lg shadow-lg p-8 max-w-xs w-full transform transition-all duration-500 hover:scale-105 hover:shadow-2xl">
-            <div class="text-center">
-                <h3 class="text-2xl font-semibold text-gray-700 mb-3">+2 in Computer Management / Commerce</h3>
-                <p class="text-lg text-gray-600">Dharan Adarsha</p>
-                <p class="text-sm text-gray-400 mt-2 italic">2020 - 2022</p>
-            </div>
-            <div class="mt-6 border-t pt-4 text-center">
-                <!-- Learn More Link Button -->
-                <a href="https://www.facebook.com/p/Dharan-Adarsha-Boarding-Secondary-schooldharan-100063633472581/" target="_blank" class="bg-blue-500 text-white py-2 px-4 rounded-lg text-sm hover:bg-blue-600 transition duration-300">
-                    Learn More
-                </a>
+            <!-- Education Card -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-2">Bachelors in Information Management (BIM)</h3>
+                <p class="text-gray-600 dark:text-gray-300">Sunsari Technical College (TU affiliated)</p>
+                <p class="text-sm text-gray-400 dark:text-gray-500 italic mt-1">2022 - ongoing</p>
+                <a href="https://stc.edu.np/" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition transform hover:scale-105">Learn More</a>
             </div>
         </div>
+    </section>
 
-        <!-- Education 3 (Optional) -->
-        <div class="bg-white rounded-lg shadow-lg p-8 max-w-xs w-full transform transition-all duration-500 hover:scale-105 hover:shadow-2xl">
-            <div class="text-center">
-                <h3 class="text-2xl font-semibold text-gray-700 mb-3">Bachelors in Information Management (BIM)</h3>
-                <p class="text-lg text-gray-600">Sunsari Technical College (TU affiliated)</p>
-                <p class="text-sm text-gray-400 mt-2 italic">2022 - ongoing</p>
-            </div>
-            <div class="mt-6 border-t pt-4 text-center">
-                <a href="https://stc.edu.np/" target="_blank" class="bg-blue-500 text-white py-2 px-4 rounded-lg text-sm hover:bg-blue-600 transition duration-300">
-                    Learn More
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- my education section ends here  -->
-
-
-
-
-
-
-
-
-    <!-- contact section starts here  -->
-    <section class="py-12 containerwidth" id="hireme">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-10"><span class="text-gray-500">Hire</span> Me</h2>
-            <p class="italic text-gray-600 text-center mb-8">
-                Contact me so we can discuss the project you want to build.
-            </p>
-
-            <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg w-full max-w-2xl mx-auto">
-
-                <!-- Contact Info -->
-                <div class=" p-3 rounded-lg mb-6">
-                    <h3 class="text-xl font-bold mb-4">CONTACT INFO</h3>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3">
-                            <i class="fa-regular fa-envelope text-[30px]"></i>
-                            <span class="text-sm md:text-base">pukarmagar00@gmail.com</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-phone text-[30px]"></i>
-                            <span class=" text-sm md:text-base">+9779862634007</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-location-dot text-[30px]"></i>
-                            <span class=" text-sm md:text-base">Dharan, Sunsari</span>
-                        </div>
+    <!-- Contact Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="hireme">
+        <h2 class="text-4xl font-bold text-center text-gray-800 dark:text-white mb-12"><span class="text-gray-500 dark:text-gray-400">Hire</span> Me</h2>
+        <p class="text-lg italic text-gray-600 dark:text-gray-300 text-center mb-8">Let's collaborate on your next big project!</p>
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 md:p-8 max-w-2xl mx-auto">
+            <!-- Contact Info -->
+            <div class="mb-8">
+                <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Get in Touch</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-regular fa-envelope text-2xl text-gray-600 dark:text-gray-300"></i>
+                        <span>pukarmagar00@gmail.com</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-phone text-2xl text-gray-600 dark:text-gray-300"></i>
+                        <span>+9779862634007</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-location-dot text-2xl text-gray-600 dark:text-gray-300"></i>
+                        <span>Dharan, Sunsari</span>
                     </div>
                 </div>
-
-                <!-- Contact Form -->
-                <form class="py-2 space-y-4">
+            </div>
+            <!-- Contact Form -->
+            <div class="border-t dark:border-gray-700 pt-6">
+                <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Send a Message</h3>
+                <form id="contact-form" class="space-y-4" onsubmit="handleSubmit(event)">
                     <div>
-                        <label class="block text-gray-700 font-medium">Name</label>
-                        <input type="text"
-                            class="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-offset-white">
+                        <label class="block text-gray-700 dark:text-gray-300 font-medium">Name</label>
+                        <input type="text" required class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-gray-800 dark:focus:ring-gray-300 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" placeholder="Your Name">
                     </div>
                     <div>
-                        <label class="block text-gray-700 font-medium">Address</label>
-                        <input type="text"
-                            class="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-offset-white">
+                        <label class="block text-gray-700 dark:text-gray-300 font-medium">Address</label>
+                        <input type="text" required class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-gray-800 dark:focus:ring-gray-300 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" placeholder="Your Address">
                     </div>
                     <div>
-                        <label class="block text-gray-700 font-medium">Phone</label>
-                        <input type="tel"
-                            class="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-offset-white">
+                        <label class="block text-gray-700 dark:text-gray-300 font-medium">Phone</label>
+                        <input type="tel" required pattern="[0-9]{10,}" class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-gray-800 dark:focus:ring-gray-300 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" placeholder="Your Phone Number">
                     </div>
                     <div>
-                        <label class="block text-gray-700 font-medium">Email</label>
-                        <input type="email"
-                            class="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-offset-white"
-                            placeholder="example@gmail.com">
+                        <label class="block text-gray-700 dark:text-gray-300 font-medium">Email</label>
+                        <input type="email" required class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-gray-800 dark:focus:ring-gray-300 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" placeholder="example@gmail.com">
                     </div>
                     <div>
-                        <label class="block text-gray-700 font-medium">Message</label>
-                        <textarea
-                            class="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-offset-white"
-                            rows="4"></textarea>
+                        <label class="block text-gray-700 dark:text-gray-300 font-medium">Message</label>
+                        <textarea required class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-gray-800 dark:focus:ring-gray-300 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" rows="4" placeholder="Your Message"></textarea>
                     </div>
-                    <button type="submit"
-                        class="w-full bg-black text-white py-3  hover:bg-white hover:text-black border rounded transition">Submit</button>
+                    <button type="submit" class="w-full py-3 bg-gradient-to-r from-gray-700 to-gray-900 text-white rounded-md hover:from-gray-600 hover:to-gray-800 transition transform hover:scale-105">Submit</button>
                 </form>
-
             </div>
         </div>
     </section>
-    <!-- contact section ends here  -->
 
-
-
-
-    <!-- footer section starts here  -->
-    <footer>
-        <div class="text-[13px] flex  md:flex justify-center">
-            <p class="">Pukar Gurmachhan - Copyright © All rights reserved.</p>
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Pukar Gurmachhan</h3>
+                    <p class="text-gray-400">Full-stack developer crafting innovative solutions with a passion for technology.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Connect</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/pukar.magar.9404/" target="_blank" class="text-xl text-gray-400 hover:text-white transition transform hover:scale-110"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/_gurma/?next=%2F" target="_blank" class="text-xl text-gray-400 hover:text-white transition transform hover:scale-110"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://github.com/GurmachhanPukar1" target="_blank" class="text-xl text-gray-400 hover:text-white transition transform hover:scale-110"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/pukar-gurmachhan-51160534b/" target="_blank" class="text-xl text-gray-400 hover:text-white transition transform hover:scale-110"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Stay Updated</h3>
+                    <form class="flex space-x-2">
+                        <input type="email" placeholder="Enter your email" class="w-full p-2 rounded-md bg-gray-800 text-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-600" disabled>
+                        <button type="submit" class="px-4 py-2 bg-gradient-to-r from-gray-700 to-gray-900 text-white rounded-md hover:from-gray-600 hover:to-gray-800 transition" disabled>Subscribe</button>
+                    </form>
+                    <p class="text-sm text-gray-400 mt-2">Newsletter signup coming soon!</p>
+                </div>
+            </div>
+            <p class="text-center text-sm text-gray-400 mt-8">Pukar Gurmachhan &copy; 2025. All rights reserved.</p>
         </div>
     </footer>
-    <!-- footer section ends here  -->
 
-
-
-
-<!-- tree section stars here  -->
- 
-<!-- tree section ends here  -->
-
-
-
-    
-
-
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.1/dist/flowbite.min.js"></script>
+    <script>
+        // Dark Mode Toggle
+        const toggleButton = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+        toggleButton.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            toggleButton.innerHTML = htmlElement.classList.contains('dark') 
+                ? '<i class="fa-solid fa-sun"></i>' 
+                : '<i class="fa-solid fa-moon"></i>';
+        });
 
+        // Form Submission Handler
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Form submitted successfully! (Note: This is a demo; no actual data is sent.)');
+            event.target.reset();
+        }
+    </script>
 </body>
-
 </html>
-
-
-<!--    npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch    -->

@@ -3,37 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Pukar Gurmachhan, a dedicated Full Stack Developer specializing in elegant web solutions.">
-    <meta name="keywords" content="Pukar Gurmachhan, Full Stack Developer, Portfolio, Web Development">
+    <meta name="description" content="Portfolio of Pukar Gurmachhan, a visionary Full Stack Developer crafting futuristic web solutions.">
+    <meta name="keywords" content="Pukar Gurmachhan, Full Stack Developer, Portfolio, Web Development, Futuristic">
     <meta name="author" content="Pukar Gurmachhan">
     <title>Pukar Gurmachhan - Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
           integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.development.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.development.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/babel-standalone@6.26.0/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <style>
         .glassmorphism {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
-        .glassmorphism-dark {
-            background: rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        .neon-glow {
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+        .rounded-organic {
+            border-radius: 50% 20% 30% 60% / 40% 50% 20% 30%;
+        }
+        .circular-img {
+            border-radius: 50%;
+        }
+        .elliptical-card {
+            border-radius: 50% 20% 50% 20% / 30% 50% 30% 50%;
+        }
+        body {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
         }
     </style>
 </head>
-<body class="font-inter bg-gradient-to-b from-gray-100 to-gray-200 text-gray-900">
-    <div id="root"></div>
+<body class="font-inter text-gray-100">
+    <div id="particles-js" class="fixed inset-0 z-0"></div>
+    <div id="root" class="relative z-10"></div>
 
     <script type="text/babel">
-        const { useState } = React;
+        const { useState, useEffect } = React;
 
         // Navbar Component
         const Navbar = () => {
@@ -42,32 +54,33 @@
             const toggleMenu = () => setIsOpen(!isOpen);
 
             return (
-                <header className="glassmorphism sticky top-0 z-50">
-                    <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+                <header className="glassmorphism sticky top-0 z-50 py-4">
+                    <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
                         <div className="flex items-center space-x-3">
-                            <a href="#" className="text-2xl font-bold font-georgia text-gray-900 hover:text-gray-700 transition">Pukar Gurmachhan</a>
+                            <img src="/img/prfl.jpg" alt="Profile Image" className="w-12 h-12 circular-img object-cover neon-glow hover:scale-105 transition-transform duration-300" />
+                            <a href="#" className="text-2xl font-bold font-orbitron text-cyan-400 hover:text-cyan-300 transition">Pukar Gurmachhan</a>
                         </div>
                         <div className="hidden md:flex space-x-6 items-center">
-                            <a href="#portfolio" className="text-gray-700 hover:text-gray-900 font-medium transition">Home</a>
-                            <a href="#about" className="text-gray-700 hover:text-gray-900 font-medium transition">About</a>
-                            <a href="#projects" className="text-gray-700 hover:text-gray-900 font-medium transition">Projects</a>
-                            <a href="#education" className="text-gray-700 hover:text-gray-900 font-medium transition">Education</a>
-                            <a href="#contact" className="text-gray-700 hover:text-gray-900 font-medium transition">Contact</a>
-                            <a href="/blog.html" className="px-4 py-1.5 border border-gray-900 text-gray-900 rounded hover:bg-gray-900 hover:text-white transition">Blog</a>
+                            <a href="#portfolio" className="text-gray-300 hover:text-cyan-400 font-medium transition">Home</a>
+                            <a href="#about" className="text-gray-300 hover:text-cyan-400 font-medium transition">About</a>
+                            <a href="#projects" className="text-gray-300 hover:text-cyan-400 font-medium transition">Projects</a>
+                            <a href="#education" className="text-gray-300 hover:text-cyan-400 font-medium transition">Education</a>
+                            <a href="#contact" className="text-gray-300 hover:text-cyan-400 font-medium transition">Contact</a>
+                            <a href="/blog.html" className="px-4 py-1.5 bg-gradient-to-r from-cyan-500 to-magenta-500 text-white rounded-full neon-glow hover:from-cyan-400 hover:to-magenta-400 transition">Blog</a>
                         </div>
-                        <button className="md:hidden text-gray-700 focus:outline-none" onClick={toggleMenu} aria-label="Toggle menu">
-                            <i className={`fa-solid ${isOpen ? 'fa-times' : 'fa-bars'} text-xl`}></i>
+                        <button className="md:hidden text-gray-300 focus:outline-none" onClick={toggleMenu} aria-label="Toggle menu">
+                            <i className={`fa-solid ${isOpen ? 'fa-times' : 'fa-bars'} text-xl hover:text-cyan-400 transition`}></i>
                         </button>
                     </nav>
                     {isOpen && (
                         <div className="md:hidden glassmorphism">
                             <ul className="flex flex-col space-y-2 p-4">
-                                <li><a href="#portfolio" className="text-gray-700 hover:text-gray-900 font-medium transition" onClick={toggleMenu}>Home</a></li>
-                                <li><a href="#about" className="text-gray-700 hover:text-gray-900 font-medium transition" onClick={toggleMenu}>About</a></li>
-                                <li><a href="#projects" className="text-gray-700 hover:text-gray-900 font-medium transition" onClick={toggleMenu}>Projects</a></li>
-                                <li><a href="#education" className="text-gray-700 hover:text-gray-900 font-medium transition" onClick={toggleMenu}>Education</a></li>
-                                <li><a href="#contact" className="text-gray-700 hover:text-gray-900 font-medium transition" onClick={toggleMenu}>Contact</a></li>
-                                <li><a href="/blog.html" className="px-4 py-1.5 border border-gray-900 text-gray-900 rounded hover:bg-gray-900 hover:text-white transition inline-block" onClick={toggleMenu}>Blog</a></li>
+                                <li><a href="#portfolio" className="text-gray-300 hover:text-cyan-400 font-medium transition" onClick={toggleMenu}>Home</a></li>
+                                <li><a href="#about" className="text-gray-300 hover:text-cyan-400 font-medium transition" onClick={toggleMenu}>About</a></li>
+                                <li><a href="#projects" className="text-gray-300 hover:text-cyan-400 font-medium transition" onClick={toggleMenu}>Projects</a></li>
+                                <li><a href="#education" className="text-gray-300 hover:text-cyan-400 font-medium transition" onClick={toggleMenu}>Education</a></li>
+                                <li><a href="#contact" className="text-gray-300 hover:text-cyan-400 font-medium transition" onClick={toggleMenu}>Contact</a></li>
+                                <li><a href="/blog.html" className="px-4 py-1.5 bg-gradient-to-r from-cyan-500 to-magenta-500 text-white rounded-full neon-glow hover:from-cyan-400 hover:to-magenta-400 transition inline-block" onClick={toggleMenu}>Blog</a></li>
                             </ul>
                         </div>
                     )}
@@ -77,27 +90,27 @@
 
         // Portfolio Section
         const Portfolio = () => (
-            <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="portfolio">
+            <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 glassmorphism rounded-organic" id="portfolio">
                 <div className="flex flex-col lg:flex-row gap-8 items-center">
                     <div className="flex-1">
-                        <h1 className="text-4xl font-bold font-georgia text-gray-900 mb-4">Pukar Gurmachhan</h1>
-                        <p className="text-lg italic text-gray-600 mb-6">Full Stack Developer</p>
-                        <p className="text-base text-gray-700 leading-relaxed mb-6">
-                            A dedicated full-stack developer crafting elegant and efficient web solutions. With a passion for technology and innovation, I deliver projects that balance form and function. Let's create something exceptional together.
+                        <h1 className="text-4xl font-bold font-orbitron text-cyan-400 mb-4">Pukar Gurmachhan</h1>
+                        <p className="text-lg italic text-gray-300 mb-6">Full Stack Developer</p>
+                        <p className="text-base text-gray-200 leading-relaxed mb-6">
+                            Welcome to my digital frontier. As a visionary full-stack developer, I craft innovative web solutions that push the boundaries of technology and design. Let's shape the future together.
                         </p>
                         <div className="flex space-x-4 mb-6">
-                            <a href="https://www.facebook.com/pukar.magar.9404/" target="_blank" className="text-xl text-gray-600 hover:text-gray-900 transition"><i className="fa-brands fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/_gurma/?next=%2F" target="_blank" className="text-xl text-gray-600 hover:text-gray-900 transition"><i className="fa-brands fa-instagram"></i></a>
-                            <a href="https://github.com/GurmachhanPukar1" target="_blank" className="text-xl text-gray-600 hover:text-gray-900 transition"><i className="fa-brands fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/pukar-gurmachhan-51160534b/" target="_blank" className="text-xl text-gray-600 hover:text-gray-900 transition"><i className="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://www.facebook.com/pukar.magar.9404/" target="_blank" className="text-xl text-gray-300 hover:text-cyan-400 hover:scale-110 transition"><i className="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/_gurma/?next=%2F" target="_blank" className="text-xl text-gray-300 hover:text-cyan-400 hover:scale-110 transition"><i className="fa-brands fa-instagram"></i></a>
+                            <a href="https://github.com/GurmachhanPukar1" target="_blank" className="text-xl text-gray-300 hover:text-cyan-400 hover:scale-110 transition"><i className="fa-brands fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/pukar-gurmachhan-51160534b/" target="_blank" className="text-xl text-gray-300 hover:text-cyan-400 hover:scale-110 transition"><i className="fa-brands fa-linkedin-in"></i></a>
                         </div>
                         <div className="flex space-x-4">
-                            <a href="#contact" className="px-4 py-2 bg-gray-900 text-white rounded hover:bg-gray-800 transition">Hire Me</a>
-                            <a href="/img/CV.png" download="My_CV" className="px-4 py-2 border border-gray-900 text-gray-900 rounded hover:bg-gray-900 hover:text-white transition">Download CV</a>
+                            <a href="#contact" className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-magenta-500 text-white rounded-full neon-glow hover:from-cyan-400 hover:to-magenta-400 transition">Hire Me</a>
+                            <a href="/img/CV.png" download="My_CV" className="px-4 py-2 glassmorphism text-cyan-400 border border-cyan-400 rounded-full hover:bg-cyan-400 hover:text-gray-900 transition">Download CV</a>
                         </div>
                     </div>
                     <div className="flex-1 hidden lg:block">
-                        <img src="/img/pic1.jpg" alt="Profile Image" className="w-full rounded object-cover glassmorphism" />
+                        <img src="/img/pic1.jpg" alt="Profile Image" className="w-full circular-img object-cover neon-glow hover:scale-105 transition-transform duration-300" />
                     </div>
                 </div>
             </section>
@@ -105,23 +118,23 @@
 
         // About Section
         const About = () => (
-            <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 glassmorphism" id="about">
-                <h2 className="text-3xl font-bold font-georgia text-gray-900 text-center mb-8">About Me</h2>
+            <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 glassmorphism rounded-organic" id="about">
+                <h2 className="text-3xl font-bold font-orbitron text-cyan-400 text-center mb-8">About Me</h2>
                 <div className="flex flex-col lg:flex-row gap-8 items-center">
                     <div className="flex-1">
-                        <img src="/img/aboutimg.jpg" alt="About Image" className="w-full rounded object-cover glassmorphism" />
+                        <img src="/img/aboutimg.jpg" alt="About Image" className="w-full circular-img object-cover neon-glow hover:scale-105 transition-transform duration-300" />
                     </div>
                     <div className="flex-1">
-                        <p className="text-base text-gray-700 leading-relaxed mb-4">
+                        <p className="text-base text-gray-200 leading-relaxed mb-4">
                             I am a full-stack developer pursuing a Bachelor's in Information Management (BIM) at Sunsari Technical College, affiliated with Tribhuvan University.
                         </p>
-                        <p className="text-base text-gray-700 leading-relaxed mb-4">
-                            My passion for technology drives me to create seamless user experiences and robust backend systems. I approach each project with a commitment to excellence and a focus on delivering practical solutions.
+                        <p className="text-base text-gray-200 leading-relaxed mb-4">
+                            Driven by a passion for technology, I specialize in creating seamless user interfaces and robust backend systems, blending creativity with precision to deliver cutting-edge solutions.
                         </p>
-                        <p className="text-base text-gray-700 leading-relaxed mb-6">
-                            Explore my work and let's discuss how we can collaborate on your next project.
+                        <p className="text-base text-gray-200 leading-relaxed mb-6">
+                            Ready to innovate? Let's build the future together.
                         </p>
-                        <a href="/blog.html" className="px-4 py-2 border border-gray-900 text-gray-900 rounded hover:bg-gray-900 hover:text-white transition inline-block">Check My Blog</a>
+                        <a href="/blog.html" className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-magenta-500 text-white rounded-full neon-glow hover:from-cyan-400 hover:to-magenta-400 transition inline-block">Check My Blog</a>
                     </div>
                 </div>
             </section>
@@ -140,14 +153,14 @@
 
             return (
                 <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="projects">
-                    <h2 className="text-3xl font-bold font-georgia text-gray-900 text-center mb-8">My Projects</h2>
+                    <h2 className="text-3xl font-bold font-orbitron text-cyan-400 text-center mb-8">My Projects</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {projects.map((project, index) => (
-                            <div key={index} className="glassmorphism rounded overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                                <img src={project.img} alt={project.title} className="w-full h-40 object-cover" />
+                            <div key={index} className="glassmorphism elliptical-card overflow-hidden hover:scale-105 transition-transform duration-300">
+                                <img src={project.img} alt={project.title} className="w-full h-40 object-cover circular-img" />
                                 <div className="p-4 text-center">
-                                    <h3 className="text-lg font-semibold font-georgia text-gray-900 mb-2">{project.title}</h3>
-                                    <a href={project.url} className="text-sm text-gray-600 hover:text-gray-900 underline transition">View Project</a>
+                                    <h3 className="text-lg font-semibold font-orbitron text-gray-200 mb-2">{project.title}</h3>
+                                    <a href={project.url} className="text-sm text-gray-300 hover:text-cyan-400 underline transition">View Project</a>
                                 </div>
                             </div>
                         ))}
@@ -165,15 +178,15 @@
             ];
 
             return (
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 glassmorphism" id="education">
-                    <h2 className="text-3xl font-bold font-georgia text-gray-900 text-center mb-8">My Education</h2>
+                <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 glassmorphism rounded-organic" id="education">
+                    <h2 className="text-3xl font-bold font-orbitron text-cyan-400 text-center mb-8">My Education</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {education.map((edu, index) => (
-                            <div key={index} className="glassmorphism rounded p-4 text-center">
-                                <h3 className="text-lg font-semibold font-georgia text-gray-900 mb-2">{edu.title}</h3>
-                                <p className="text-gray-600 text-sm">{edu.institution}</p>
-                                <p className="text-sm text-gray-500 italic mt-1">{edu.period}</p>
-                                <a href={edu.url} target="_blank" className="mt-3 inline-block text-sm text-gray-600 hover:text-gray-900 underline transition">Learn More</a>
+                            <div key={index} className="glassmorphism elliptical-card p-4 text-center hover:scale-105 transition-transform duration-300">
+                                <h3 className="text-lg font-semibold font-orbitron text-gray-200 mb-2">{edu.title}</h3>
+                                <p className="text-gray-300 text-sm">{edu.institution}</p>
+                                <p className="text-sm text-gray-400 italic mt-1">{edu.period}</p>
+                                <a href={edu.url} target="_blank" className="mt-3 inline-block text-sm text-gray-300 hover:text-cyan-400 underline transition">Learn More</a>
                             </div>
                         ))}
                     </div>
@@ -203,55 +216,55 @@
 
             return (
                 <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="contact">
-                    <h2 className="text-3xl font-bold font-georgia text-gray-900 text-center mb-8">Contact Me</h2>
-                    <p className="text-base text-gray-600 text-center mb-6">Please reach out to discuss potential collaborations.</p>
-                    <div className="glassmorphism rounded p-6 max-w-xl mx-auto">
+                    <h2 className="text-3xl font-bold font-orbitron text-cyan-400 text-center mb-8">Contact Me</h2>
+                    <p className="text-base text-gray-300 text-center mb-6">Let's connect to explore future collaborations.</p>
+                    <div className="glassmorphism rounded-organic p-6 max-w-xl mx-auto">
                         <div className="mb-6">
-                            <h3 className="text-lg font-semibold font-georgia text-gray-900 mb-4">Contact Information</h3>
+                            <h3 className="text-lg font-semibold font-orbitron text-gray-200 mb-4">Contact Information</h3>
                             <div className="space-y-2 text-sm">
                                 <div className="flex items-center gap-2">
-                                    <i className="fa-regular fa-envelope text-gray-600"></i>
+                                    <i className="fa-regular fa-envelope text-gray-300"></i>
                                     <span>pukarmagar00@gmail.com</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <i className="fa-solid fa-phone text-gray-600"></i>
+                                    <i className="fa-solid fa-phone text-gray-300"></i>
                                     <span>+9779862634007</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <i className="fa-solid fa-location-dot text-gray-600"></i>
+                                    <i className="fa-solid fa-location-dot text-gray-300"></i>
                                     <span>Dharan, Sunsari</span>
                                 </div>
                             </div>
                         </div>
-                        <div className="border-t border-gray-300 pt-6">
-                            <h3 className="text-lg font-semibold font-georgia text-gray-900 mb-4">Send a Message</h3>
+                        <div className="border-t border-gray-400 pt-6">
+                            <h3 className="text-lg font-semibold font-orbitron text-gray-200 mb-4">Send a Message</h3>
                             <form onSubmit={handleSubmit} className="space-y-4">
                                 <div>
-                                    <label className="block text-gray-700 text-sm font-medium">Name</label>
+                                    <label className="block text-gray-300 text-sm font-medium">Name</label>
                                     <input
                                         type="text"
                                         name="name"
                                         value={formData.name}
                                         onChange={handleChange}
                                         required
-                                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-gray-900 bg-white"
+                                        className="w-full p-2 glassmorphism text-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan-400"
                                         placeholder="Your Name"
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-gray-700 text-sm font-medium">Address</label>
+                                    <label className="block text-gray-300 text-sm font-medium">Address</label>
                                     <input
                                         type="text"
                                         name="address"
                                         value={formData.address}
                                         onChange={handleChange}
                                         required
-                                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-gray-900 bg-white"
+                                        className="w-full p-2 glassmorphism text-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan-400"
                                         placeholder="Your Address"
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-gray-700 text-sm font-medium">Phone</label>
+                                    <label className="block text-gray-300 text-sm font-medium">Phone</label>
                                     <input
                                         type="tel"
                                         name="phone"
@@ -259,35 +272,35 @@
                                         onChange={handleChange}
                                         required
                                         pattern="[0-9]{10,}"
-                                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-gray-900 bg-white"
+                                        className="w-full p-2 glassmorphism text-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan-400"
                                         placeholder="Your Phone Number"
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-gray-700 text-sm font-medium">Email</label>
+                                    <label className="block text-gray-300 text-sm font-medium">Email</label>
                                     <input
                                         type="email"
                                         name="email"
                                         value={formData.email}
                                         onChange={handleChange}
                                         required
-                                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-gray-900 bg-white"
+                                        className="w-full p-2 glassmorphism text-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan-400"
                                         placeholder="example@gmail.com"
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-gray-700 text-sm font-medium">Message</label>
+                                    <label className="block text-gray-300 text-sm font-medium">Message</label>
                                     <textarea
                                         name="message"
                                         value={formData.message}
                                         onChange={handleChange}
                                         required
-                                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-gray-900 bg-white"
+                                        className="w-full p-2 glassmorphism text-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400"
                                         rows="4"
                                         placeholder="Your Message"
                                     ></textarea>
                                 </div>
-                                <button type="submit" className="w-full py-2 bg-gray-900 text-white rounded hover:bg-gray-800 transition">Submit</button>
+                                <button type="submit" className="w-full py-2 bg-gradient-to-r from-cyan-500 to-magenta-500 text-white rounded-full neon-glow hover:from-cyan-400 hover:to-magenta-400 transition">Submit</button>
                             </form>
                         </div>
                     </div>
@@ -297,36 +310,58 @@
 
         // Footer Section
         const Footer = () => (
-            <footer className="glassmorphism-dark text-white py-8">
+            <footer className="glassmorphism-dark py-8">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                         <div>
-                            <p className="text-sm text-gray-300">Pukar Gurmachhan, Full Stack Developer</p>
+                            <p className="text-sm text-gray-300 font-orbitron">Pukar Gurmachhan, Full Stack Developer</p>
                         </div>
                         <div className="flex space-x-4">
-                            <a href="https://www.facebook.com/pukar.magar.9404/" target="_blank" className="text-sm text-gray-300 hover:text-white transition"><i className="fa-brands fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/_gurma/?next=%2F" target="_blank" className="text-sm text-gray-300 hover:text-white transition"><i className="fa-brands fa-instagram"></i></a>
-                            <a href="https://github.com/GurmachhanPukar1" target="_blank" className="text-sm text-gray-300 hover:text-white transition"><i className="fa-brands fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/pukar-gurmachhan-51160534b/" target="_blank" className="text-sm text-gray-300 hover:text-white transition"><i className="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://www.facebook.com/pukar.magar.9404/" target="_blank" className="text-sm text-gray-300 hover:text-cyan-400 transition"><i className="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/_gurma/?next=%2F" target="_blank" className="text-sm text-gray-300 hover:text-cyan-400 transition"><i className="fa-brands fa-instagram"></i></a>
+                            <a href="https://github.com/GurmachhanPukar1" target="_blank" className="text-sm text-gray-300 hover:text-cyan-400 transition"><i className="fa-brands fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/pukar-gurmachhan-51160534b/" target="_blank" className="text-sm text-gray-300 hover:text-cyan-400 transition"><i className="fa-brands fa-linkedin-in"></i></a>
                         </div>
                     </div>
-                    <p className="text-center text-xs text-gray-300 mt-4">Pukar Gurmachhan &copy; 2025. All rights reserved.</p>
+                    <p className="text-center text-xs text-gray-400 mt-4">Pukar Gurmachhan &copy; 2025. All rights reserved.</p>
                 </div>
             </footer>
         );
 
         // Main App Component
-        const App = () => (
-            <div>
-                <Navbar />
-                <Portfolio />
-                <About />
-                <Projects />
-                <Education />
-                <Contact />
-                <Footer />
-            </div>
-        );
+        const App = () => {
+            useEffect(() => {
+                particlesJS('particles-js', {
+                    particles: {
+                        number: { value: 80, density: { enable: true, value_area: 800 } },
+                        color: { value: '#00f5ff' },
+                        shape: { type: 'circle' },
+                        opacity: { value: 0.5, random: true },
+                        size: { value: 3, random: true },
+                        line_linked: { enable: true, distance: 150, color: '#00f5ff', opacity: 0.4, width: 1 },
+                        move: { enable: true, speed: 2, direction: 'none', random: true }
+                    },
+                    interactivity: {
+                        detect_on: 'canvas',
+                        events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' } },
+                        modes: { repulse: { distance: 100 }, push: { particles_nb: 4 } }
+                    },
+                    retina_detect: true
+                });
+            }, []);
+
+            return (
+                <div>
+                    <Navbar />
+                    <Portfolio />
+                    <About />
+                    <Projects />
+                    <Education />
+                    <Contact />
+                    <Footer />
+                </div>
+            );
+        };
 
         // Render the App
         ReactDOM.render(<App />, document.getElementById('root'));

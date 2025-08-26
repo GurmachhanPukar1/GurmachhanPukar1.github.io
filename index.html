@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Pukar Gurmachhan, a visionary Full Stack Developer crafting futuristic web solutions.">
-    <meta name="keywords" content="Pukar Gurmachhan, Full Stack Developer, Portfolio, Web Development, Futuristic">
+    <meta name="description" content="Portfolio of Pukar Gurmachhan, a visionary Full Stack Developer crafting professional web solutions.">
+    <meta name="keywords" content="Pukar Gurmachhan, Full Stack Developer, Portfolio, Web Development, Professional">
     <meta name="author" content="Pukar Gurmachhan">
     <title>Pukar Gurmachhan - Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
           integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -18,31 +18,65 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <style>
         .glassmorphism {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
-        .neon-glow {
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3);
+        body {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            color: #2d3748;
+            scroll-behavior: smooth;
         }
-        .rounded-organic {
-            border-radius: 50% 20% 30% 60% / 40% 50% 20% 30%;
+        .btn-primary {
+            background: linear-gradient(to right, #2b6cb0, #3182ce);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(to right, #2c5282, #2b6cb0);
+            transform: scale(1.05);
+        }
+        .btn-secondary {
+            border: 1px solid #2b6cb0;
+            color: #2b6cb0;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background: #2b6cb0;
+            color: #ffffff;
+            transform: scale(1.05);
+        }
+        .rounded-soft {
+            border-radius: 12px;
         }
         .circular-img {
             border-radius: 50%;
         }
-        .elliptical-card {
-            border-radius: 50% 20% 50% 20% / 30% 50% 30% 50%;
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        body {
-            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        #particles-js {
+            transform: translateZ(0);
+            transition: transform 0.1s ease-out;
         }
     </style>
 </head>
-<body class="font-inter text-gray-100">
-    <div id="particles-js" class="fixed inset-0 z-0"></div>
-    <div id="root" class="relative z-10"></div>
+<body class="font-inter text-gray-800">
+    <div id="particles-js" class="fixed inset-0 z-0 opacity-50"></div>
+    <div id="root" className="relative z-10"></div>
 
     <script type="text/babel">
         const { useState, useEffect } = React;
@@ -55,32 +89,32 @@
 
             return (
                 <header className="glassmorphism sticky top-0 z-50 py-4">
-                    <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+                    <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
                         <div className="flex items-center space-x-3">
-                            <img src="/img/prfl.jpg" alt="Profile Image" className="w-12 h-12 circular-img object-cover neon-glow hover:scale-105 transition-transform duration-300" />
-                            <a href="#" className="text-2xl font-bold font-orbitron text-cyan-400 hover:text-cyan-300 transition">Pukar Gurmachhan</a>
+                            <img src="/img/prfl.jpg" alt="Profile Image" className="w-10 h-10 circular-img object-cover hover:scale-105 transition-transform duration-300" />
+                            <a href="#" className="text-2xl font-bold text-gray-800">gurma</a>
                         </div>
-                        <div className="hidden md:flex space-x-6 items-center">
-                            <a href="#portfolio" className="text-gray-300 hover:text-cyan-400 font-medium transition">Home</a>
-                            <a href="#about" className="text-gray-300 hover:text-cyan-400 font-medium transition">About</a>
-                            <a href="#projects" className="text-gray-300 hover:text-cyan-400 font-medium transition">Projects</a>
-                            <a href="#education" className="text-gray-300 hover:text-cyan-400 font-medium transition">Education</a>
-                            <a href="#contact" className="text-gray-300 hover:text-cyan-400 font-medium transition">Contact</a>
-                            <a href="/blog.html" className="px-4 py-1.5 bg-gradient-to-r from-cyan-500 to-magenta-500 text-white rounded-full neon-glow hover:from-cyan-400 hover:to-magenta-400 transition">Blog</a>
+                        <div className="hidden md:flex space-x-8 items-center">
+                            <a href="#portfolio" className="text-gray-600 hover:text-blue-600 font-medium transition">Home</a>
+                            <a href="#about" className="text-gray-600 hover:text-blue-600 font-medium transition">About</a>
+                            <a href="#projects" className="text-gray-600 hover:text-blue-600 font-medium transition">Projects</a>
+                            <a href="#education" className="text-gray-600 hover:text-blue-600 font-medium transition">Education</a>
+                            <a href="#contact" className="text-gray-600 hover:text-blue-600 font-medium transition">Contact</a>
+                            <a href="/blog.html" className="px-4 py-1.5 btn-primary text-white rounded-soft">Blog</a>
                         </div>
-                        <button className="md:hidden text-gray-300 focus:outline-none" onClick={toggleMenu} aria-label="Toggle menu">
-                            <i className={`fa-solid ${isOpen ? 'fa-times' : 'fa-bars'} text-xl hover:text-cyan-400 transition`}></i>
+                        <button className="md:hidden text-gray-600 focus:outline-none" onClick={toggleMenu} aria-label="Toggle menu">
+                            <i className={`fa-solid ${isOpen ? 'fa-times' : 'fa-bars'} text-xl hover:text-blue-600 transition`}></i>
                         </button>
                     </nav>
                     {isOpen && (
                         <div className="md:hidden glassmorphism">
                             <ul className="flex flex-col space-y-2 p-4">
-                                <li><a href="#portfolio" className="text-gray-300 hover:text-cyan-400 font-medium transition" onClick={toggleMenu}>Home</a></li>
-                                <li><a href="#about" className="text-gray-300 hover:text-cyan-400 font-medium transition" onClick={toggleMenu}>About</a></li>
-                                <li><a href="#projects" className="text-gray-300 hover:text-cyan-400 font-medium transition" onClick={toggleMenu}>Projects</a></li>
-                                <li><a href="#education" className="text-gray-300 hover:text-cyan-400 font-medium transition" onClick={toggleMenu}>Education</a></li>
-                                <li><a href="#contact" className="text-gray-300 hover:text-cyan-400 font-medium transition" onClick={toggleMenu}>Contact</a></li>
-                                <li><a href="/blog.html" className="px-4 py-1.5 bg-gradient-to-r from-cyan-500 to-magenta-500 text-white rounded-full neon-glow hover:from-cyan-400 hover:to-magenta-400 transition inline-block" onClick={toggleMenu}>Blog</a></li>
+                                <li><a href="#portfolio" className="text-gray-600 hover:text-blue-600 font-medium transition" onClick={toggleMenu}>Home</a></li>
+                                <li><a href="#about" className="text-gray-600 hover:text-blue-600 font-medium transition" onClick={toggleMenu}>About</a></li>
+                                <li><a href="#projects" className="text-gray-600 hover:text-blue-600 font-medium transition" onClick={toggleMenu}>Projects</a></li>
+                                <li><a href="#education" className="text-gray-600 hover:text-blue-600 font-medium transition" onClick={toggleMenu}>Education</a></li>
+                                <li><a href="#contact" className="text-gray-600 hover:text-blue-600 font-medium transition" onClick={toggleMenu}>Contact</a></li>
+                                <li><a href="/blog.html" className="px-4 py-1.5 btn-primary text-white rounded-soft" onClick={toggleMenu}>Blog</a></li>
                             </ul>
                         </div>
                     )}
@@ -89,56 +123,90 @@
         };
 
         // Portfolio Section
-        const Portfolio = () => (
-            <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 glassmorphism rounded-organic" id="portfolio">
-                <div className="flex flex-col lg:flex-row gap-8 items-center">
-                    <div className="flex-1">
-                        <h1 className="text-4xl font-bold font-orbitron text-cyan-400 mb-4">Pukar Gurmachhan</h1>
-                        <p className="text-lg italic text-gray-300 mb-6">Full Stack Developer</p>
-                        <p className="text-base text-gray-200 leading-relaxed mb-6">
-                            Welcome to my digital frontier. As a visionary full-stack developer, I craft innovative web solutions that push the boundaries of technology and design. Let's shape the future together.
-                        </p>
-                        <div className="flex space-x-4 mb-6">
-                            <a href="https://www.facebook.com/pukar.magar.9404/" target="_blank" className="text-xl text-gray-300 hover:text-cyan-400 hover:scale-110 transition"><i className="fa-brands fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/_gurma/?next=%2F" target="_blank" className="text-xl text-gray-300 hover:text-cyan-400 hover:scale-110 transition"><i className="fa-brands fa-instagram"></i></a>
-                            <a href="https://github.com/GurmachhanPukar1" target="_blank" className="text-xl text-gray-300 hover:text-cyan-400 hover:scale-110 transition"><i className="fa-brands fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/pukar-gurmachhan-51160534b/" target="_blank" className="text-xl text-gray-300 hover:text-cyan-400 hover:scale-110 transition"><i className="fa-brands fa-linkedin-in"></i></a>
+        const Portfolio = () => {
+            useEffect(() => {
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');
+                            }
+                        });
+                    },
+                    { threshold: 0.1 }
+                );
+                document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+                return () => observer.disconnect();
+            }, []);
+
+            return (
+                <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 glassmorphism rounded-soft fade-in" id="portfolio">
+                    <div className="flex flex-col lg:flex-row gap-12 items-center">
+                        <div className="flex-1">
+                            <h1 className="text-4xl font-bold text-gray-800 mb-4">Pukar Gurmachhan</h1>
+                            <p className="text-lg font-medium text-gray-600 mb-6">Full Stack Developer</p>
+                            <p className="text-base text-gray-600 leading-relaxed mb-6">
+                                Welcome to my portfolio. As a dedicated full-stack developer, I specialize in creating innovative and reliable web solutions that blend seamless functionality with modern design. Let's collaborate to bring your ideas to life.
+                            </p>
+                            <div className="flex space-x-4 mb-6">
+                                <a href="https://www.facebook.com/pukar.magar.9404/" target="_blank" className="text-xl text-gray-600 hover:text-blue-600 transition"><i className="fa-brands fa-facebook-f"></i></a>
+                                <a href="https://www.instagram.com/_gurma/?next=%2F" target="_blank" className="text-xl text-gray-600 hover:text-blue-600 transition"><i className="fa-brands fa-instagram"></i></a>
+                                <a href="https://github.com/GurmachhanPukar1" target="_blank" className="text-xl text-gray-600 hover:text-blue-600 transition"><i className="fa-brands fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/pukar-gurmachhan-51160534b/" target="_blank" className="text-xl text-gray-600 hover:text-blue-600 transition"><i className="fa-brands fa-linkedin-in"></i></a>
+                            </div>
+                            <div className="flex space-x-4">
+                                <a href="#contact" className="px-6 py-2 btn-primary text-white rounded-soft">Hire Me</a>
+                                <a href="/img/CV.png" download="My_CV" className="px-6 py-2 btn-secondary rounded-soft">Download CV</a>
+                            </div>
                         </div>
-                        <div className="flex space-x-4">
-                            <a href="#contact" className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-magenta-500 text-white rounded-full neon-glow hover:from-cyan-400 hover:to-magenta-400 transition">Hire Me</a>
-                            <a href="/img/CV.png" download="My_CV" className="px-4 py-2 glassmorphism text-cyan-400 border border-cyan-400 rounded-full hover:bg-cyan-400 hover:text-gray-900 transition">Download CV</a>
+                        <div className="flex-1 hidden lg:block">
+                            <img src="/img/pic1.jpg" alt="Profile Image" className="w-full circular-img object-cover hover:scale-105 transition-transform duration-300" />
                         </div>
                     </div>
-                    <div className="flex-1 hidden lg:block">
-                        <img src="/img/pic1.jpg" alt="Profile Image" className="w-full circular-img object-cover neon-glow hover:scale-105 transition-transform duration-300" />
-                    </div>
-                </div>
-            </section>
-        );
+                </section>
+            );
+        };
 
         // About Section
-        const About = () => (
-            <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 glassmorphism rounded-organic" id="about">
-                <h2 className="text-3xl font-bold font-orbitron text-cyan-400 text-center mb-8">About Me</h2>
-                <div className="flex flex-col lg:flex-row gap-8 items-center">
-                    <div className="flex-1">
-                        <img src="/img/aboutimg.jpg" alt="About Image" className="w-full circular-img object-cover neon-glow hover:scale-105 transition-transform duration-300" />
+        const About = () => {
+            useEffect(() => {
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');
+                            }
+                        });
+                    },
+                    { threshold: 0.1 }
+                );
+                document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+                return () => observer.disconnect();
+            }, []);
+
+            return (
+                <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 glassmorphism rounded-soft fade-in" id="about">
+                    <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">About Me</h2>
+                    <div className="flex flex-col lg:flex-row gap-12 items-center">
+                        <div className="flex-1">
+                            <img src="/img/aboutimg.jpg" alt="About Image" className="w-full circular-img object-cover hover:scale-105 transition-transform duration-300" />
+                        </div>
+                        <div className="flex-1">
+                            <p className="text-base text-gray-600 leading-relaxed mb-4">
+                                I am a full-stack developer pursuing a Bachelor's in Information Management (BIM) at Sunsari Technical College, affiliated with Tribhuvan University.
+                            </p>
+                            <p className="text-base text-gray-600 leading-relaxed mb-4">
+                                With a passion for technology, I excel in building intuitive user interfaces and robust backend systems, delivering solutions that combine creativity with technical precision.
+                            </p>
+                            <p className="text-base text-gray-600 leading-relaxed mb-6">
+                                Ready to bring your vision to reality? Let's create something extraordinary.
+                            </p>
+                            <a href="/blog.html" className="px-6 py-2 btn-primary text-white rounded-soft">Check My Blog</a>
+                        </div>
                     </div>
-                    <div className="flex-1">
-                        <p className="text-base text-gray-200 leading-relaxed mb-4">
-                            I am a full-stack developer pursuing a Bachelor's in Information Management (BIM) at Sunsari Technical College, affiliated with Tribhuvan University.
-                        </p>
-                        <p className="text-base text-gray-200 leading-relaxed mb-4">
-                            Driven by a passion for technology, I specialize in creating seamless user interfaces and robust backend systems, blending creativity with precision to deliver cutting-edge solutions.
-                        </p>
-                        <p className="text-base text-gray-200 leading-relaxed mb-6">
-                            Ready to innovate? Let's build the future together.
-                        </p>
-                        <a href="/blog.html" className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-magenta-500 text-white rounded-full neon-glow hover:from-cyan-400 hover:to-magenta-400 transition inline-block">Check My Blog</a>
-                    </div>
-                </div>
-            </section>
-        );
+                </section>
+            );
+        };
 
         // Projects Section
         const Projects = () => {
@@ -151,16 +219,31 @@
                 { title: "Portfolio Website", img: "/img/img5.png", url: "https://sikum.com.np/" }
             ];
 
+            useEffect(() => {
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');
+                            }
+                        });
+                    },
+                    { threshold: 0.1 }
+                );
+                document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+                return () => observer.disconnect();
+            }, []);
+
             return (
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="projects">
-                    <h2 className="text-3xl font-bold font-orbitron text-cyan-400 text-center mb-8">My Projects</h2>
+                <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 fade-in" id="projects">
+                    <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">My Projects</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {projects.map((project, index) => (
-                            <div key={index} className="glassmorphism elliptical-card overflow-hidden hover:scale-105 transition-transform duration-300">
-                                <img src={project.img} alt={project.title} className="w-full h-40 object-cover circular-img" />
+                            <div key={index} className="glassmorphism rounded-soft overflow-hidden card-hover fade-in">
+                                <img src={project.img} alt={project.title} className="w-full h-40 object-cover" />
                                 <div className="p-4 text-center">
-                                    <h3 className="text-lg font-semibold font-orbitron text-gray-200 mb-2">{project.title}</h3>
-                                    <a href={project.url} className="text-sm text-gray-300 hover:text-cyan-400 underline transition">View Project</a>
+                                    <h3 className="text-lg font-semibold text-gray-800 mb-2">{project.title}</h3>
+                                    <a href={project.url} className="text-sm text-blue-600 hover:underline transition">View Project</a>
                                 </div>
                             </div>
                         ))}
@@ -177,16 +260,31 @@
                 { title: "Bachelors in Information Management (BIM)", institution: "Sunsari Technical College (TU affiliated)", period: "2022 - ongoing", url: "https://stc.edu.np/" }
             ];
 
+            useEffect(() => {
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');
+                            }
+                        });
+                    },
+                    { threshold: 0.1 }
+                );
+                document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+                return () => observer.disconnect();
+            }, []);
+
             return (
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 glassmorphism rounded-organic" id="education">
-                    <h2 className="text-3xl font-bold font-orbitron text-cyan-400 text-center mb-8">My Education</h2>
+                <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 glassmorphism rounded-soft fade-in" id="education">
+                    <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">My Education</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {education.map((edu, index) => (
-                            <div key={index} className="glassmorphism elliptical-card p-4 text-center hover:scale-105 transition-transform duration-300">
-                                <h3 className="text-lg font-semibold font-orbitron text-gray-200 mb-2">{edu.title}</h3>
-                                <p className="text-gray-300 text-sm">{edu.institution}</p>
-                                <p className="text-sm text-gray-400 italic mt-1">{edu.period}</p>
-                                <a href={edu.url} target="_blank" className="mt-3 inline-block text-sm text-gray-300 hover:text-cyan-400 underline transition">Learn More</a>
+                            <div key={index} className="glassmorphism rounded-soft p-4 text-center card-hover fade-in">
+                                <h3 className="text-lg font-semibold text-gray-800 mb-2">{edu.title}</h3>
+                                <p className="text-gray-600 text-sm">{edu.institution}</p>
+                                <p className="text-sm text-gray-500 italic mt-1">{edu.period}</p>
+                                <a href={edu.url} target="_blank" className="mt-3 inline-block text-sm text-blue-600 hover:underline transition">Learn More</a>
                             </div>
                         ))}
                     </div>
@@ -214,57 +312,72 @@
                 setFormData({ name: '', address: '', phone: '', email: '', message: '' });
             };
 
+            useEffect(() => {
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');
+                            }
+                        });
+                    },
+                    { threshold: 0.1 }
+                );
+                document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+                return () => observer.disconnect();
+            }, []);
+
             return (
-                <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="contact">
-                    <h2 className="text-3xl font-bold font-orbitron text-cyan-400 text-center mb-8">Contact Me</h2>
-                    <p className="text-base text-gray-300 text-center mb-6">Let's connect to explore future collaborations.</p>
-                    <div className="glassmorphism rounded-organic p-6 max-w-xl mx-auto">
+                <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 fade-in" id="contact">
+                    <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">Contact Me</h2>
+                    <p className="text-base text-gray-600 text-center mb-6">Let's connect to explore future collaborations.</p>
+                    <div className="glassmorphism rounded-soft p-6 max-w-xl mx-auto">
                         <div className="mb-6">
-                            <h3 className="text-lg font-semibold font-orbitron text-gray-200 mb-4">Contact Information</h3>
+                            <h3 className="text-lg font-semibold text-gray-800 mb-4">Contact Information</h3>
                             <div className="space-y-2 text-sm">
                                 <div className="flex items-center gap-2">
-                                    <i className="fa-regular fa-envelope text-gray-300"></i>
+                                    <i className="fa-regular fa-envelope text-gray-600"></i>
                                     <span>pukarmagar00@gmail.com</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <i className="fa-solid fa-phone text-gray-300"></i>
+                                    <i className="fa-solid fa-phone text-gray-600"></i>
                                     <span>+9779862634007</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <i className="fa-solid fa-location-dot text-gray-300"></i>
+                                    <i className="fa-solid fa-location-dot text-gray-600"></i>
                                     <span>Dharan, Sunsari</span>
                                 </div>
                             </div>
                         </div>
-                        <div className="border-t border-gray-400 pt-6">
-                            <h3 className="text-lg font-semibold font-orbitron text-gray-200 mb-4">Send a Message</h3>
-                            <form onSubmit={handleSubmit} className="space-y-4">
+                        <div className="border-t border-gray-300 pt-6">
+                            <h3 className="text-lg font-semibold text-gray-800 mb-4">Send a Message</h3>
+                            <div className="space-y-4">
                                 <div>
-                                    <label className="block text-gray-300 text-sm font-medium">Name</label>
+                                    <label className="block text-gray-600 text-sm font-medium">Name</label>
                                     <input
                                         type="text"
                                         name="name"
                                         value={formData.name}
                                         onChange={handleChange}
                                         required
-                                        className="w-full p-2 glassmorphism text-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                                        className="w-full p-2 glassmorphism text-gray-800 rounded-soft focus:outline-none focus:ring-2 focus:ring-blue-500"
                                         placeholder="Your Name"
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-gray-300 text-sm font-medium">Address</label>
+                                    <label className="block text-gray-600 text-sm font-medium">Address</label>
                                     <input
                                         type="text"
                                         name="address"
                                         value={formData.address}
                                         onChange={handleChange}
                                         required
-                                        className="w-full p-2 glassmorphism text-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                                        className="w-full p-2 glassmorphism text-gray-800 rounded-soft focus:outline-none focus:ring-2 focus:ring-blue-500"
                                         placeholder="Your Address"
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-gray-300 text-sm font-medium">Phone</label>
+                                    <label className="block text-gray-600 text-sm font-medium">Phone</label>
                                     <input
                                         type="tel"
                                         name="phone"
@@ -272,36 +385,36 @@
                                         onChange={handleChange}
                                         required
                                         pattern="[0-9]{10,}"
-                                        className="w-full p-2 glassmorphism text-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                                        className="w-full p-2 glassmorphism text-gray-800 rounded-soft focus:outline-none focus:ring-2 focus:ring-blue-500"
                                         placeholder="Your Phone Number"
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-gray-300 text-sm font-medium">Email</label>
+                                    <label className="block text-gray-600 text-sm font-medium">Email</label>
                                     <input
                                         type="email"
                                         name="email"
                                         value={formData.email}
                                         onChange={handleChange}
                                         required
-                                        className="w-full p-2 glassmorphism text-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                                        className="w-full p-2 glassmorphism text-gray-800 rounded-soft focus:outline-none focus:ring-2 focus:ring-blue-500"
                                         placeholder="example@gmail.com"
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-gray-300 text-sm font-medium">Message</label>
+                                    <label className="block text-gray-600 text-sm font-medium">Message</label>
                                     <textarea
                                         name="message"
                                         value={formData.message}
                                         onChange={handleChange}
                                         required
-                                        className="w-full p-2 glassmorphism text-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                                        className="w-full p-2 glassmorphism text-gray-800 rounded-soft focus:outline-none focus:ring-2 focus:ring-blue-500"
                                         rows="4"
                                         placeholder="Your Message"
                                     ></textarea>
                                 </div>
-                                <button type="submit" className="w-full py-2 bg-gradient-to-r from-cyan-500 to-magenta-500 text-white rounded-full neon-glow hover:from-cyan-400 hover:to-magenta-400 transition">Submit</button>
-                            </form>
+                                <button onClick={handleSubmit} className="w-full py-2 btn-primary text-white rounded-soft">Submit</button>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -310,20 +423,20 @@
 
         // Footer Section
         const Footer = () => (
-            <footer className="glassmorphism-dark py-8">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <footer className="glassmorphism py-8">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                         <div>
-                            <p className="text-sm text-gray-300 font-orbitron">Pukar Gurmachhan, Full Stack Developer</p>
+                            <p className="text-sm text-gray-600">Pukar Gurmachhan, Full Stack Developer</p>
                         </div>
                         <div className="flex space-x-4">
-                            <a href="https://www.facebook.com/pukar.magar.9404/" target="_blank" className="text-sm text-gray-300 hover:text-cyan-400 transition"><i className="fa-brands fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/_gurma/?next=%2F" target="_blank" className="text-sm text-gray-300 hover:text-cyan-400 transition"><i className="fa-brands fa-instagram"></i></a>
-                            <a href="https://github.com/GurmachhanPukar1" target="_blank" className="text-sm text-gray-300 hover:text-cyan-400 transition"><i className="fa-brands fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/pukar-gurmachhan-51160534b/" target="_blank" className="text-sm text-gray-300 hover:text-cyan-400 transition"><i className="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://www.facebook.com/pukar.magar.9404/" target="_blank" className="text-sm text-gray-600 hover:text-blue-600 transition"><i className="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/_gurma/?next=%2F" target="_blank" className="text-sm text-gray-600 hover:text-blue-600 transition"><i className="fa-brands fa-instagram"></i></a>
+                            <a href="https://github.com/GurmachhanPukar1" target="_blank" className="text-sm text-gray-600 hover:text-blue-600 transition"><i className="fa-brands fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/pukar-gurmachhan-51160534b/" target="_blank" className="text-sm text-gray-600 hover:text-blue-600 transition"><i className="fa-brands fa-linkedin-in"></i></a>
                         </div>
                     </div>
-                    <p className="text-center text-xs text-gray-400 mt-4">Pukar Gurmachhan &copy; 2025. All rights reserved.</p>
+                    <p className="text-center text-xs text-gray-500 mt-4">Pukar Gurmachhan &copy; 2025. All rights reserved.</p>
                 </div>
             </footer>
         );
@@ -333,21 +446,30 @@
             useEffect(() => {
                 particlesJS('particles-js', {
                     particles: {
-                        number: { value: 80, density: { enable: true, value_area: 800 } },
-                        color: { value: '#00f5ff' },
+                        number: { value: 60, density: { enable: true, value_area: 1000 } },
+                        color: { value: '#2b6cb0' },
                         shape: { type: 'circle' },
-                        opacity: { value: 0.5, random: true },
-                        size: { value: 3, random: true },
-                        line_linked: { enable: true, distance: 150, color: '#00f5ff', opacity: 0.4, width: 1 },
-                        move: { enable: true, speed: 2, direction: 'none', random: true }
+                        opacity: { value: 0.3, random: true },
+                        size: { value: 2, random: true },
+                        line_linked: { enable: true, distance: 120, color: '#2b6cb0', opacity: 0.3, width: 1 },
+                        move: { enable: true, speed: 1.5, direction: 'none', random: true }
                     },
                     interactivity: {
                         detect_on: 'canvas',
                         events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' } },
-                        modes: { repulse: { distance: 100 }, push: { particles_nb: 4 } }
+                        modes: { repulse: { distance: 80 }, push: { particles_nb: 3 } }
                     },
                     retina_detect: true
                 });
+
+                // Parallax effect for particles
+                const handleScroll = () => {
+                    const scrollY = window.scrollY;
+                    const particles = document.getElementById('particles-js');
+                    particles.style.transform = `translateY(${scrollY * 0.2}px)`;
+                };
+                window.addEventListener('scroll', handleScroll);
+                return () => window.removeEventListener('scroll', handleScroll);
             }, []);
 
             return (

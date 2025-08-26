@@ -3,47 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/src/output.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .btn-number {
+            background: #e2e8f0;
+            transition: all 0.2s ease;
+        }
+        .btn-number:hover {
+            background: #cbd5e1;
+            transform: scale(1.05);
+        }
+        .btn-operator {
+            background: #3182ce;
+            color: white;
+            transition: all 0.2s ease;
+        }
+        .btn-operator:hover {
+            background: #2b6cb0;
+            transform: scale(1.05);
+        }
+        .btn-pressed {
+            transform: scale(0.95);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        body {
+            background: linear-gradient(135deg, #edf2f7 0%, #d6e2f0 100%);
+        }
+    </style>
 </head>
-<body>
-    <section class="bg-black h-screen flex text-white">
-        <div class="border-2 border-amber-50  w-[90%] sm:w-[70%] md:[50%] lg:w-[35%] xl:w-[25%] rounded-3xl m-auto overflow-hidden">
-            <input type="text" class="text-right w-full p-3 h-24 border border-white rounded-xl text-4xl id" id="display" readonly>
-            <div class="grid grid-cols-4 text-3xl pl-3 space-y-2 py-5 gap-2">
-                <button onclick="clearall()" class="bg-[#a6a4a7] h-16 w-16 rounded-full hover:bg-[#827f83] duration-150">C</button>
-                <button onclick="display('+/-')" class="bg-[#a6a4a7] h-16 w-16 rounded-full hover:bg-[#827f83] duration-150">+/-</button>
-                <button onclick="display('%')" class="bg-[#a6a4a7] h-16 w-16 rounded-full hover:bg-[#827f83] duration-150">%</button>
-                <button onclick="display('/')" class="bg-[#f0a23d] h-16 w-16 rounded-full">/</button>
+<body class="font-inter min-h-screen flex items-center justify-center">
+    <section class="glassmorphism rounded-2xl p-4 w-full max-w-sm sm:max-w-md mx-auto">
+        <input
+            type="text"
+            id="display"
+            class="w-full p-4 text-right text-3xl sm:text-4xl bg-gray-100 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-inner"
+            readonly
+        >
+        <div class="grid grid-cols-4 gap-2 sm:gap-3 p-2">
+            <button onclick="clearall()" class="btn-number h-12 sm:h-14 rounded-full text-lg sm:text-xl">C</button>
+            <button onclick="display('+/-')" class="btn-number h-12 sm:h-14 rounded-full text-lg sm:text-xl">±</button>
+            <button onclick="display('%')" class="btn-number h-12 sm:h-14 rounded-full text-lg sm:text-xl">%</button>
+            <button onclick="display('/')" class="btn-operator h-12 sm:h-14 rounded-full text-lg sm:text-xl">/</button>
 
-                <button onclick="display(7)" class=" bg-[#a6a4a7] h-16 w-16 rounded-full hover:bg-[#827f83] duration-150">7</button>
-                <button onclick="display(8)" class="bg-[#a6a4a7] h-16 w-16 rounded-full hover:bg-[#827f83] duration-150">8</button>
-                <button onclick="display(9)" class="bg-[#a6a4a7] h-16 w-16 rounded-full hover:bg-[#827f83] duration-150">9</button>
-                <button onclick="display('*')" class="bg-[#f0a23d] h-16 w-16 rounded-full">X</button>
+            <button onclick="display('7')" class="btn-number h-12 sm:h-14 rounded-full text-lg sm:text-xl">7</button>
+            <button onclick="display('8')" class="btn-number h-12 sm:h-14 rounded-full text-lg sm:text-xl">8</button>
+            <button onclick="display('9')" class="btn-number h-12 sm:h-14 rounded-full text-lg sm:text-xl">9</button>
+            <button onclick="display('*')" class="btn-operator h-12 sm:h-14 rounded-full text-lg sm:text-xl">×</button>
 
-                <button onclick="display(4)" class="bg-[#a6a4a7] h-16 w-16 rounded-full hover:bg-[#827f83] duration-150">4</button>
-                <button onclick="display(5)" class="bg-[#a6a4a7] h-16 w-16 rounded-full hover:bg-[#827f83] duration-150">5</button>
-                <button onclick="display(6)" class="bg-[#a6a4a7] h-16 w-16 rounded-full hover:bg-[#827f83] duration-150">6</button>
-                <button onclick="display('-')" class="bg-[#f0a23d] h-16 w-16 rounded-full">-</button>
+            <button onclick="display('4')" class="btn-number h-12 sm:h-14 rounded-full text-lg sm:text-xl">4</button>
+            <button onclick="display('5')" class="btn-number h-12 sm:h-14 rounded-full text-lg sm:text-xl">5</button>
+            <button onclick="display('6')" class="btn-number h-12 sm:h-14 rounded-full text-lg sm:text-xl">6</button>
+            <button onclick="display('-')" class="btn-operator h-12 sm:h-14 rounded-full text-lg sm:text-xl">-</button>
 
-                <button onclick="display(1)" class="bg-[#a6a4a7] h-16 w-16 rounded-full hover:bg-[#827f83] duration-150">1</button>
-                <button onclick="display(2)" class="bg-[#a6a4a7] h-16 w-16 rounded-full hover:bg-[#827f83] duration-150">2</button>
-                <button onclick="display(3)" class="bg-[#a6a4a7] h-16 w-16 rounded-full hover:bg-[#827f83] duration-150">3</button>
-                <button onclick="display('+')" class="bg-[#f0a23d] h-16 w-16 rounded-full">+</button>
+            <button onclick="display('1')" class="btn-number h-12 sm:h-14 rounded-full text-lg sm:text-xl">1</button>
+            <button onclick="display('2')" class="btn-number h-12 sm:h-14 rounded-full text-lg sm:text-xl">2</button>
+            <button onclick="display('3')" class="btn-number h-12 sm:h-14 rounded-full text-lg sm:text-xl">3</button>
+            <button onclick="display('+')" class="btn-operator h-12 sm:h-14 rounded-full text-lg sm:text-xl">+</button>
 
-                <button onclick="display(0)" class="bg-[#a6a4a7] h-16 rounded-full  hover:bg-[#827f83] duration-150">0</button>
-                <button onclick="edit()" class="bg-[#a6a4a7] h-16 rounded-full  hover:bg-[#827f83] duration-150"><i class="fa-solid fa-pen-to-square"></i></button>
-                <button onclick="display('.')" class="bg-[#a6a4a7] h-16 w-16 rounded-full hover:bg-[#827f83] duration-150">.</button>
-                <button onclick="calculate()" class="bg-[#f0a23d] h-16 w-16 rounded-full">=</button>
-                
-
-            </div>
+            <button onclick="display('0')" class="btn-number h-12 sm:h-14 rounded-full text-lg sm:text-xl col-span-2">0</button>
+            <button onclick="display('.')" class="btn-number h-12 sm:h-14 rounded-full text-lg sm:text-xl">.</button>
+            <button onclick="calculate()" class="btn-operator h-12 sm:h-14 rounded-full text-lg sm:text-xl">=</button>
         </div>
     </section>
 
+    <script>
+        const displayEl = document.getElementById('display');
+        let currentInput = '';
 
-</body><script src="/js/index.js"></script>
+        function display(value) {
+            if (value === '+/-') {
+                if (currentInput.startsWith('-')) {
+                    currentInput = currentInput.slice(1);
+                } else {
+                    currentInput = '-' + currentInput;
+                }
+            } else {
+                currentInput += value;
+            }
+            displayEl.value = currentInput;
+        }
+
+        function clearall() {
+            currentInput = '';
+            displayEl.value = '';
+        }
+
+        function calculate() {
+            try {
+                const result = eval(currentInput.replace('×', '*'));
+                currentInput = result.toString();
+                displayEl.value = currentInput;
+            } catch (error) {
+                displayEl.value = 'Error';
+                currentInput = '';
+            }
+        }
+
+        // Add button press animation
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => button.classList.add('btn-pressed'));
+            button.addEventListener('mouseup', () => button.classList.remove('btn-pressed'));
+            button.addEventListener('mouseleave', () => button.classList.remove('btn-pressed'));
+        });
+    </script>
+</body>
 </html>
-
-<!-- npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch -->

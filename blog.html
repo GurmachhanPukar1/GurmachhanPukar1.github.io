@@ -1,106 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>_gurmaBlog | Pukar Gurmachhan</title>
+    <meta name="description" content="Blog and portfolio of Pukar Gurmachhan, a web developer, travel enthusiast, and bass guitarist seeking opportunities to fund his adventures.">
+    <meta name="keywords" content="web development, portfolio, travel, music, bass guitar">
+    <meta name="author" content="Pukar Gurmachhan">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/src/output.css">
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         html {
             scroll-behavior: smooth;
         }
-
-        .containerwidth {
-            width: 80%;
-            margin: auto;
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        body {
+            background: linear-gradient(135deg, #edf2f7 0%, #d6e2f0 100%);
+        }
+        .btn-primary {
+            background: linear-gradient(to right, #2b6cb0, #3182ce);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(to right, #2c5282, #2b6cb0);
+            transform: scale(1.05);
+        }
+        .btn-secondary {
+            border: 1px solid #2b6cb0;
+            color: #2b6cb0;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background: #2b6cb0;
+            color: #ffffff;
+            transform: scale(1.05);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
-
-<body>
-
-
-<!-- header section starts here  -->
-<header class="bg-[whitesmoke] shadow-2xl z-20 sticky top-0">
-    <nav class=" containerwidth flex justify-between max-w-screen-xl items-center lg:gap-7 mx-auto containerwidth">
-        <div class="p-2 flex justify-between items-center" >
-            <img src="/img/prfl.jpg" class=" cursor-pointer hover:scale-105 duration-300 w-14 h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-23 lg:h-23 rounded-full object-cover" alt="profile image">
-            <h1 class="text-2xl xl:text-3xl font-bold leading-[70px] hover:text-gray-400 duration-300 hover:cursor-pointer">&nbsp;_gurmaBlog</h1>
-        </div>
-
-        <div>
-            <ul class="hidden md:flex gap-7 text-[18px]">
-                <li><a href="#portfolio" class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Portfolio</a></li>
-                <li><a href="#aboutme" class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">About Me</a></li>
-                <li><a href="#myprojects" class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Projects</a></li>
-                <li><a href="#myeducation" class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Education</a></li>
-            </ul>
-        </div>
-
-        <div>
-            <!-- Drawer init and toggle -->
-            <div class="block text-center md:hidden">
-                <button type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example"
-                    aria-controls="drawer-example">
-                    <i class="fa-solid fa-bars text-2xl xl:text-4xl"></i>
+<body class="font-inter text-gray-800">
+    <!-- Header Section -->
+    <header class="glassmorphism sticky top-0 z-50 py-4">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <img src="img/pukar.jpg" class="w-12 h-12 rounded-full object-cover hover:scale-105 transition-transform duration-300" alt="Profile image">
+                    <a href="#" class="text-2xl font-bold text-gray-800">_gurmaBlog</a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="inindex.html " class="text-gray-600 hover:text-blue-600 font-medium transition">Portfolio</a>
+                    <a href="inindex.html " class="text-gray-600 hover:text-blue-600 font-medium transition">About</a>
+                    <a href=" " class="text-gray-600 hover:text-blue-600 font-medium transition">Projects</a>
+                    <a href="inindex.html " class="text-gray-600 hover:text-blue-600 font-medium transition">Education</a>
+                    <a href="index.html" class="text-gray-600 hover:text-blue-600 font-medium transition">Blog</a>
+                    <a href="/img/cv.png" download="CV.png" class="px-4 py-1.5 btn-primary text-white rounded-lg">Download CV</a>
+                </div>
+                <button id="mobile-menu-toggle" class="md:hidden text-gray-600 focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl hover:text-blue-600 transition"></i>
                 </button>
             </div>
-
-            <!-- Drawer component -->
-            <div id="drawer-example"
-                class="bg-white fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full w-80"
-                tabindex="-1" aria-labelledby="drawer-label">
-                <h5 class="italic text-gray-600 text-[20px] font-light p-3">
-                    Menu
-                </h5>
-                <button type="button" data-drawer-hide="drawer-example" aria-controls="drawer-example"
-                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white">
-                    <svg class="w-1.5 h-1.5 xl:w-2 xl:h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="none" viewBox="0 0 14 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                    </svg>
-                    <span class="sr-only">Close menu</span>
-                </button>
-
-                <ul class="text-xl space-y-4 bg-white p-4 rounded-lg">
-                    <li><a href="#portfolio" class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Portfolio</a>
-                    </li>
-                    <li><a href="#aboutme" class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">About Me</a>
-                    </li>
-                    <li><a href="#myprojects" class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Projects</a></li>
-                    <li><a href="#myeducation" class="hover:text-gray-500 duration-150 font-medium hover:text-[19px]">Education</a>
-                    </li>
-
-                    <li>
-                        <a href="/img/cv.png" download="CV.png">
-                            <button class="block md:hidden px-4 py-1.5 text-black border border-black rounded-md hover:bg-black hover:text-white transition">
-                                Download CV &nbsp;<i class="fa-solid fa-download"></i>
-                            </button>
-                        </a>
-                    </li>
+            <div id="mobile-menu" class="md:hidden hidden mt-4 glassmorphism rounded-lg">
+                <ul class="flex flex-col space-y-2 p-4 text-lg">
+                    <li><a href="#portfolio" class="text-gray-600 hover:text-blue-600 font-medium transition">Portfolio</a></li>
+                    <li><a href="#about" class="text-gray-600 hover:text-blue-600 font-medium transition">About</a></li>
+                    <li><a href="#projects" class="text-gray-600 hover:text-blue-600 font-medium transition">Projects</a></li>
+                    <li><a href="#education" class="text-gray-600 hover:text-blue-600 font-medium transition">Education</a></li>
+                    <li><a href="#blog" class="text-gray-600 hover:text-blue-600 font-medium transition">Blog</a></li>
+                    <li><a href="/img/cv.png" download="CV.png" class="block px-4 py-1.5 btn-primary text-white rounded-lg">Download CV</a></li>
                 </ul>
             </div>
+        </nav>
+    </header>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 glassmorphism rounded-lg fade-in">
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+            <div class="flex-1">
+                <h1 class="text-4xl font-bold text-gray-800 mb-4">Pukar Gurmachhan</h1>
+                <p class="text-lg font-medium text-gray-600 mb-6">Web Developer | Travel Dreamer | Bass Guitarist</p>
+                <p class="text-base text-gray-600 leading-relaxed mb-6">
+                    I'm a passionate web developer crafting innovative digital solutions. My love for travel fuels my creativity, but financial constraints keep my adventures on hold. Hire me to bring your projects to life, and help me explore the world while playing my bass guitar!
+                </p>
+                <div class="flex space-x-4 mb-6">
+                    <a href="https://www.facebook.com" target="_blank" class="text-xl text-gray-600 hover:text-blue-600 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" class="text-xl text-gray-600 hover:text-blue-600 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://github.com" target="_blank" class="text-xl text-gray-600 hover:text-blue-600 transition"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank" class="text-xl text-gray-600 hover:text-blue-600 transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="px-6 py-2 btn-primary text-white rounded-lg">Hire Me</a>
+                    <a href="/img/cv.png" download="CV.png" class="px-6 py-2 btn-secondary rounded-lg">Download CV</a>
+                </div>
+            </div>
+            <div class="flex-1 hidden lg:block">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf7d6f3e?q=80&w=1470&auto=format&fit=crop" alt="Travel inspiration" class="w-full rounded-lg object-cover card-hover">
+            </div>
         </div>
-    </nav>
-</header>
-<!-- header section ends here -->
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 glassmorphism rounded-lg fade-in">
+        <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">About Me</h2>
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+            <div class="flex-1">
+                <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=1470&auto=format&fit=crop" alt="Bass guitar" class="w-full rounded-lg object-cover card-hover">
+            </div>
+            <div class="flex-1">
+                <p class="text-base text-gray-600 leading-relaxed mb-4">
+                    I'm Pukar Gurmachhan, a full-stack web developer with a knack for creating seamless user experiences. My passion for travel inspires my work, dreaming of exploring new cultures and landscapes. Financial challenges keep me grounded, but I'm eager to take on projects to fund my adventures.
+                </p>
+                <p class="text-base text-gray-600 leading-relaxed mb-4">
+                    As a music enthusiast, I play the bass guitar, finding rhythm in both code and chords. A lifelong learner, I'm always honing my skills to deliver cutting-edge solutions.
+                </p>
+                <p class="text-base text-gray-600 leading-relaxed mb-6">
+                    Hire me to build your next project, and let's create something amazing while helping me hit the road!
+                </p>
+                <a href="#blog" class="px-6 py-2 btn-primary text-white rounded-lg">Read My Blog</a>
+            </div>
+        </div>
+    </section>
 
 
 
 
 
+    <!-- Blog Section -->
+    <section id="blog" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 glassmorphism rounded-lg fade-in">
+        <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">My Blog</h2>
+        <div class="space-y-8">
+            <div class="glassmorphism p-6 rounded-lg card-hover">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4">Coding, Travel, and Music: My Journey</h3>
+                <p class="text-base text-gray-600 leading-relaxed mb-4">
+                    As a web developer, I find inspiration in the rhythm of code, much like the basslines I play on my guitar. My dream is to travel the world, from the mountains of Nepal to the beaches of Bali, but financial constraints keep me grounded. I'm seeking web development projects to fund my adventures and share my experiences through this blog.
+                </p>
+                <p class="text-base text-gray-600 leading-relaxed mb-4">
+                    Whether it's building a dynamic web app or strumming my bass, I'm always learning and pushing boundaries. If you're looking for a dedicated developer to bring your ideas to life, let's connect! Your project could help me take my next step toward exploring the world.
+                </p>
+                <a href="#contact" class="inline-block px-6 py-2 btn-primary text-white rounded-lg">Hire Me</a>
+            </div>
+        </div>
+    </section>
 
-    
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 glassmorphism rounded-lg fade-in">
+        <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">Contact Me</h2>
+        <p class="text-base text-gray-600 text-center mb-6">Interested in hiring me? Let's connect!</p>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="space-y-4">
+                <h3 class="text-lg font-semibold text-gray-800">Get in Touch</h3>
+                <div class="flex items-center gap-2">
+                    <i class="fa-regular fa-envelope text-gray-600"></i>
+                    <span>pukarmagar00@gmail.com</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-gray-600"></i>
+                    <span>+9779862634007</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-location-dot text-gray-600"></i>
+                    <span>Dharan, Sunsari</span>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <h3 class="text-lg font-semibold text-gray-800">Send a Message</h3>
+                <form id="contact-form" class="space-y-4">
+                    <div>
+                        <label class="block text-gray-600 text-sm font-medium">Name</label>
+                        <input type="text" name="name" class="w-full p-2 glassmorphism rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Name" required />
+                    </div>
+                    <div>
+                        <label class="block text-gray-600 text-sm font-medium">Email</label>
+                        <input type="email" name="email" class="w-full p-2 glassmorphism rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="example@gmail.com" required />
+                    </div>
+                    <div>
+                        <label class="block text-gray-600 text-sm font-medium">Message</label>
+                        <textarea name="message" class="w-full p-2 glassmorphism rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" rows="4" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-2 btn-primary text-white rounded-lg">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
+    <!-- Footer Section -->
+    <footer class="glassmorphism py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-600">Pukar Gurmachhan &copy; 2025. All rights reserved.</p>
+                <div class="flex space-x-4">
+                    <a href="https://www.facebook.com" target="_blank" class="text-sm text-gray-600 hover:text-blue-600 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" class="text-sm text-gray-600 hover:text-blue-600 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://github.com" target="_blank" class="text-sm text-gray-600 hover:text-blue-600 transition"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank" class="text-sm text-gray-600 hover:text-blue-600 transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
+    <script>
+        // Intersection Observer for fade-in animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                },
+                { threshold: 0.1 }
+            );
+            document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
 
+            // Mobile menu toggle
+            const toggleButton = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            toggleButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+
+        // Form submission (demo alert)
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Form submitted successfully! (Note: This is a demo; no actual data is sent.)');
+            e.target.reset();
+        });
+    </script>
 </body>
-
 </html>
-
-<!--    npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch    -->

@@ -1,118 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/src/output.css">
+    <title>Bill Payment</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        .containerwidth {
-            width: 90%;
-            margin: auto;
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
-
+        body {
+            background: linear-gradient(135deg, #edf2f7 0%, #d6e2f0 100%);
+        }
+        .input-field {
+            transition: all 0.3s ease;
+        }
+        .input-field:focus {
+            transform: scale(1.02);
+            box-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
+        }
+        .btn-primary {
+            background: linear-gradient(to right, #2b6cb0, #3182ce);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(to right, #2c5282, #2b6cb0);
+            transform: scale(1.05);
+        }
+        .receipt-hidden {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .receipt-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
         input:disabled, select:disabled, button:disabled {
             background-color: #f0f0f0;
             cursor: not-allowed;
         }
     </style>
 </head>
-
-<body>
-
-    <section>
-            <div class="grid grid-cols-1 sm:grid-cols-2 containerwidth py-7 gap-9 ">
-
-            <div class=" bg-[whitesmoke] shadow-2xl px-9 py-7 rounded-lg">
-                <h1 class="text-center text-4xl font-medium text-red-400 py-5">Bill Payment</h1>
-                <div class="border"></div>
-                <div class="space-y-5 py-10">
-                    <div class="flex gap-10 items-center">
-                        <label for="name" class="font-medium">Name:</label>
-                        <input type="text" name="name" id="name" class="border rounded-lg w-[70%] h-8 px-3">
+<body class="font-inter min-h-screen flex items-center justify-center py-10">
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
+            <div class="glassmorphism p-6 sm:p-8 rounded-xl">
+                <h1 class="text-center text-3xl sm:text-4xl font-bold text-blue-600 mb-6">Bill Payment</h1>
+                <div class="border-t border-gray-300 mb-6"></div>
+                <div class="space-y-6">
+                    <div class="flex flex-col sm:flex-row gap-4 items-center">
+                        <label for="name" class="font-medium text-gray-700 w-24">Name:</label>
+                        <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            class="input-field border rounded-lg w-full h-10 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required
+                        >
                     </div>
-
-                    <div class="flex gap-7 items-center">
-                        <label for="address" class="font-medium">Address:</label>
-                        <input type="text" name="address" id="address" class="border rounded-lg w-[70%] h-8 px-3">
+                    <div class="flex flex-col sm:flex-row gap-4 items-center">
+                        <label for="address" class="font-medium text-gray-700 w-24">Address:</label>
+                        <input
+                            type="text"
+                            name="address"
+                            id="address"
+                            class="input-field border rounded-lg w-full h-10 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required
+                        >
                     </div>
-
-                    <div class="flex gap-4 items-center">
-                        <label for="phone" class="font-medium">Phone no:</label>
-                        <input type="tel" name="phone" id="phone" class="border rounded-lg w-[70%] h-8 px-3">
+                    <div class="flex flex-col sm:flex-row gap-4 items-center">
+                        <label for="phone" class="font-medium text-gray-700 w-24">Phone No:</label>
+                        <input
+                            type="tel"
+                            name="phone"
+                            id="phone"
+                            class="input-field border rounded-lg w-full h-10 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            pattern="[0-9]{10,}"
+                            required
+                        >
                     </div>
-
-                    <div class="flex gap-9 items-center">
-                        <label for="course" class="font-medium">Course:</label>
-                        <select name="course" id="course" class="border rounded-lg w-full h-10 px-3 bg-gray-200 focus:outline-none focus:ring-2">
-                            <option value="Full Stack with Laravel">Full Stack with laravel</option>
-                            <option value="Web Development">Web Development </option>
+                    <div class="flex flex-col sm:flex-row gap-4 items-center">
+                        <label for="course" class="font-medium text-gray-700 w-24">Course:</label>
+                        <select
+                            name="course"
+                            id="course"
+                            class="input-field border rounded-lg w-full h-10 px-3 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        >
+                            <option value="Full Stack with Laravel">Full Stack with Laravel</option>
+                            <option value="Web Development">Web Development</option>
                             <option value="Python Django">Python Django</option>
                             <option value="UI/UX Certification">UI/UX Certification</option>
                         </select>
                     </div>
-
-                    <div class="flex gap-6 items-center">
-                        <label for="pay" class="font-medium">Payment:</label>
-                        <input type="tel" name="pay" id="pay" class="border rounded-lg w-full h-8 px-3" placeholder="Fees is Rs.8500/-">
+                    <div class="flex flex-col sm:flex-row gap-4 items-center">
+                        <label for="pay" class="font-medium text-gray-700 w-24">Payment:</label>
+                        <input
+                            type="number"
+                            name="pay"
+                            id="pay"
+                            class="input-field border rounded-lg w-full h-10 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            placeholder="Fees is Rs.8500/-"
+                            min="0"
+                            required
+                        >
                     </div>
-
-                    <button type="buttom" onclick="billinfo()" class="bg-gray-700 py-1 px-3 rounded-lg text-white hover:text-black hover:bg-white hover:border duration-150">Submit</button>
+                    <button
+                        onclick="billinfo()"
+                        class="btn-primary w-full sm:w-auto py-2 px-6 rounded-lg text-white font-medium"
+                    >
+                        Submit
+                    </button>
                 </div>
-
             </div>
 
-            <div class="bg-[whitesmoke] shadow-2xl rounded py-7 hidden " id="receipt">
-                <h1 class="text-center text-4xl font-medium text-red-400 py-5">Receipt</h1>
-                <div class="border"></div>
-                <div class="space-y-3 px-6 py-9">
-                    <div class="flex gap-14">
-                        <label for="name" class="font-medium">Name:</label>
-                        <p class="border-b border-dotted" id="namePlace"></p>
+            <div
+                id="receipt"
+                class="glassmorphism p-6 sm:p-8 rounded-xl receipt-hidden"
+            >
+                <h1 class="text-center text-3xl sm:text-4xl font-bold text-blue-600 mb-6">Receipt</h1>
+                <div class="border-t border-gray-300 mb-6"></div>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4">
+                        <label class="font-medium text-gray-700 w-24">Name:</label>
+                        <p id="namePlace" class="border-b border-dotted flex-1 text-gray-600"></p>
                     </div>
-
-
-                    <div class="flex gap-10">
-                        <label for="address" class="font-medium">Address:</label>
-                        <p class="border-b border-dotted" id="addressPlace"></p>
+                    <div class="flex items-center gap-4">
+                        <label class="font-medium text-gray-700 w-24">Address:</label>
+                        <p id="addressPlace" class="border-b border-dotted flex-1 text-gray-600"></p>
                     </div>
-
-                    <div class="flex gap-8">
-                        <label for="phone" class="font-medium">Phone no:</label>
-                        <p class="border-b border-dotted" id="phonePlace"></p>
+                    <div class="flex items-center gap-4">
+                        <label class="font-medium text-gray-700 w-24">Phone No:</label>
+                        <p id="phonePlace" class="border-b border-dotted flex-1 text-gray-600"></p>
                     </div>
-
-                    <div class="flex gap-13">
-                        <label for="phone" class="font-medium">Course:</label>
-                        <p class="border-b border-dotted" id="coursePlace"></p>
+                    <div class="flex items-center gap-4">
+                        <label class="font-medium text-gray-700 w-24">Course:</label>
+                        <p id="coursePlace" class="border-b border-dotted flex-1 text-gray-600"></p>
                     </div>
-
-                    <div class="flex gap-8">
-                        <label for="phone" class="font-medium">Total Fees:</label>
-                        <p class="border-b border-dotted">Rs. 8500/-</p>
+                    <div class="flex items-center gap-4">
+                        <label class="font-medium text-gray-700 w-24">Total Fees:</label>
+                        <p class="border-b border-dotted flex-1 text-gray-600">Rs. 8500/-</p>
                     </div>
-
-                    <div class="flex gap-9">
-                        <label for="phone" class="font-medium">Fees Paid:</label>
-                        <p class="border-b border-dotted" id="feesPaid"></p>
+                    <div class="flex items-center gap-4">
+                        <label class="font-medium text-gray-700 w-24">Fees Paid:</label>
+                        <p id="feesPaid" class="border-b border-dotted flex-1 text-gray-600"></p>
                     </div>
-
-                    <div class="flex gap-18">
-                        <label for="phone" class="font-medium" >Due:</label>
-                        <p class="border-b border-dotted" id="payDue"></p>
+                    <div class="flex items-center gap-4">
+                        <label class="font-medium text-gray-700 w-24">Due:</label>
+                        <p id="payDue" class="border-b border-dotted flex-1 text-gray-600"></p>
                     </div>
-
                 </div>
-
             </div>
-
-
+        </div>
     </section>
 
-    <script src="/js/index.js"></script>
+    <script>
+        function billinfo() {
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+            const phone = document.getElementById('phone').value;
+            const course = document.getElementById('course').value;
+            const pay = parseFloat(document.getElementById('pay').value) || 0;
+            const totalFees = 8500;
+            const due = totalFees - pay;
+
+            if (!name || !address || !phone || !pay) {
+                alert('Please fill out all fields.');
+                return;
+            }
+
+            document.getElementById('namePlace').textContent = name;
+            document.getElementById('addressPlace').textContent = address;
+            document.getElementById('phonePlace').textContent = phone;
+            document.getElementById('coursePlace').textContent = course;
+            document.getElementById('feesPaid').textContent = `Rs. ${pay.toFixed(2)}/-`;
+            document.getElementById('payDue').textContent = `Rs. ${due < 0 ? 0 : due.toFixed(2)}/-`;
+
+            const receipt = document.getElementById('receipt');
+            receipt.classList.remove('hidden', 'receipt-hidden');
+            receipt.classList.add('receipt-visible');
+        }
+    </script>
 </body>
-
 </html>
-
-<!-- npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch -->
